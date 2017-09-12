@@ -227,13 +227,24 @@ Adição de Resumos das matérias do Livro do Deitel: Java Como Programar ed.10�
 
 ---
 
-## <a name="parte1"> </a>
+## <a name="parte1">Aula 00: Introdução ao curso</a>
+
+Apresentação dos conteúdo:
+
+[Vídeo aula 00](https://www.youtube.com/watch?v=kkOSweUhGZM)
+
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte2"> </a>
+## <a name="parte2">Aula 01: Como JAVA funciona</a>
+
+[Vídeo aula 01](https://www.youtube.com/watch?v=DlZJw7TXj2g)
+
+Resumo:
+
+![Como java funciona]()
 
 [Voltar ao Índice](#indice)
 
