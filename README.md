@@ -244,7 +244,12 @@ Apresentação dos conteúdo:
 
 Resumo:
 
-![Como java funciona]()
+![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/como-java-funciona.PNG?raw=true)
+
+Outros Artigos:
+
+(Como uma Java Virtual Machine escrita em Java funciona?)[https://pt.stackoverflow.com/questions/178563/como-uma-java-virtual-machine-escrita-em-java-funciona]
+
 
 [Voltar ao Índice](#indice)
 
