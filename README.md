@@ -248,20 +248,29 @@ Resumo:
 
 Outros Artigos:
 
-(Como uma Java Virtual Machine escrita em Java funciona?)[https://pt.stackoverflow.com/questions/178563/como-uma-java-virtual-machine-escrita-em-java-funciona]
+[Como uma Java Virtual Machine escrita em Java funciona?](https://pt.stackoverflow.com/questions/178563/como-uma-java-virtual-machine-escrita-em-java-funciona)
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte3"> </a>
+## <a name="parte3">Aula 02: Como instalar JAVA no windows</a>
+
+[Aula 02: Como instalar JAVA no windows](https://www.youtube.com/watch?v=TcqICLuUuyA)
+
+[Java Platform, Standard Edition](http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html)
+
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte4"> </a>
+## <a name="parte4"> Aula 03: Executando o processo de compilação manualmente</a>
+
+[Aula 03: Executando o processo de compilação manualmente](https://www.youtube.com/watch?v=eV3mj1LOJqE)
+
+
 
 [Voltar ao Índice](#indice)
 
