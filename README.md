@@ -270,13 +270,204 @@ Outros Artigos:
 
 [Aula 03: Executando o processo de compilação manualmente](https://www.youtube.com/watch?v=eV3mj1LOJqE)
 
+Deitel:
+
+Normalmente, existem cinco fases: editar, compilar, carregar, verificar e executar. Nós as discutiremos no contexto do Java SE 8 Development Kit ( JDK).
+
+Fase 1: criando um programa
+
+A Fase 1 consiste em editar um arquivo com um programa editor, muitas vezes conhecido simplesmente como um editor. Você digita um programa Java (em geral referido como código-fonte) utilizando o editor, faz quaisquer correções necessárias e salva o programa em um dispositivo de armazenamento secundário, como sua unidade de disco. Arquivos de código-fonte Java
+recebem um nome que termina com a extensão .java, que indica um arquivo contendo código-fonte Java.
+
+Fase 2: compilando um programa Java em bytecodes
+
+Na Fase 2, utilize o comando javac (o compilador Java) para compilar um programa. Por exemplo, a fim de compilar um programa chamado Welcome.java, você digitaria:
+
+```java
+javac Welcome.java
+```
+
+na janela de comando do seu sistema (isto é, o Prompt do MS-DOS, no Windows, ou o aplicativo Terminal, no Mac OS X) ou em um
+shell Linux (também chamado Terminal em algumas versões do Linux). Se o programa compilar, o compilador produz um arquivo
+.class chamado Welcome.class que contém a versão compilada. IDEs tipicamente fornecem um item de menu, como Build ou
+Make, que chama o comando javac para você. Se o compilador detectar erros, você precisa voltar para a Fase 1 e corrigi-los.
+
+O compilador Java converte o código-fonte Java em bytecodes que representam as tarefas a serem executadas na fase de execução
+(Fase 5). O Java Virtual Machine (JVM) — uma parte do JDK e a base da plataforma Java — executa bytecodes. A máquina
+virtual (virtual machine — VM) é um aplicativo de software que simula um computador, mas oculta o sistema operacional e o
+hardware subjacentes dos programas que interagem com ela. Se a mesma máquina virtual é implementada em muitas plataformas
+de computador, os aplicativos escritos para ela podem ser utilizados em todas essas plataformas. A JVM é uma das máquinas virtuais
+mais utilizadas. O .NET da Microsoft utiliza uma arquitetura de máquina virtual semelhante.
+
+Diferentemente das instruções em linguagem de máquina, que são dependentes de plataforma (isto é, de hardware específico
+de computador), instruções bytecode são independentes de plataforma. Portanto, os bytecodes do Java são portáveis — sem recompilar
+o código-fonte, as mesmas instruções em bytecodes podem ser executadas em qualquer plataforma contendo uma JVM que
+entende a versão do Java na qual os bytecodes foram compilados. A JVM é invocada pelo comando java. Por exemplo, para executar
+um aplicativo Java chamado Welcome, você digitaria
+
+```java
+java Welcome
+```
+
+em uma janela de comando para invocar a JVM, que então iniciaria os passos necessários a fim de executar o aplicativo. Isso começa
+a Fase 3. IDEs tipicamente fornecem um item de menu, como Run, que chama o comando java para você.
+
+Fase 3: carregando um programa na memória
+
+Na Fase 3, a JVM armazena o programa na memória para executá-lo — isso é conhecido como carregamento. O
+carregador de classe da JVM pega os arquivos .class que contêm os bytecodes do programa e os transfere para a memória primária.
+Ele também carrega qualquer um dos arquivos .class fornecidos pelo Java que seu programa usa. Os arquivos .class podem ser
+carregados a partir de um disco em seu sistema ou em uma rede (por exemplo, sua faculdade local ou rede corporativa ou a internet).
+
+Fase 4: verificação de bytecode
+
+Na Fase 4, enquanto as classes são carregadas, o verificador de bytecode examina seus bytecodes para assegurar que eles são
+válidos e não violam restrições de segurança do Java (Figura 1.9). O Java impõe uma forte segurança para certificar-se de que os
+programas Java que chegam pela rede não danificam os arquivos ou o sistema (como vírus e worms de computador).
+
+Fase 5: execução
+
+Na Fase 5, a JVM executa os bytecodes do programa, realizando, assim, as ações especificadas por ele (Figura 1.10). Nas primeiras
+versões do Java, a JVM era simplesmente um interpretador para bytecodes. A maioria dos programas Java executava lentamente,
+porque a JVM interpretava e executava um bytecode de cada vez. Algumas arquiteturas modernas de computador podem executar várias
+instruções em paralelo. Em geral, as JVMs atuais executam bytecodes utilizando uma combinação de interpretação e a chamada
+compilação just in time ( JIT). Nesse processo, a JVM analisa os bytecodes à medida que eles são interpretados, procurando hot spots
+(pontos ativos) — partes dos bytecodes que executam com frequência. Para essas partes, um compilador just in time (JIT), como o
+compilador Java HotSpot™ da Oracle, traduz os bytecodes para a linguagem de máquina do computador subjacente. Quando a JVM
+encontra de novo essas partes compiladas, o código de linguagem de máquina mais rápido é executado. Portanto, os programas Java
+realmente passam por duas fases de compilação: uma em que o código-fonte é traduzido em bytecodes (para a portabilidade entre
+JVMs em diferentes plataformas de computador) e outra em que, durante a execução, os bytecodes são traduzidos em linguagem de
+máquina para o computador real no qual o programa é executado.
+
+Um aplicativo Java é um programa de computador que é executado quando você utiliza o comando java para carregar a Java
+Virtual Machine ( JVM).
+
+![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/welcome1java.PNG?raw=true)
+
+Modifificando
+
+![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/welcome2java.PNG?raw=true)
+
+outro exemplo:
+
+![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/welcome3java.PNG?raw=true)
+
+Algumas sequências de escape comuns:
+
+![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/escapes.PNG?raw=true)
+
+Outros:
+
+[Processo de Interpretação e Compilação: Entendendo o java de uma forma diferente](http://www.devmedia.com.br/processo-de-interpretacao-e-compilacao-entendendo-o-java-de-uma-forma-diferente/24257)
+
+[Alô Mundo: Entendendo o java de uma forma diferente](http://www.devmedia.com.br/alo-mundo-entendendo-o-java-de-uma-forma-diferente/24032)
+
 
 
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte5"> </a>
+## <a name="parte5">Aula 04: Download do ambiente de desenvolvimento</a>
+
+[Aula 04: Download do ambiente de desenvolvimento](https://www.youtube.com/watch?v=blYNhqo7yhk)
+
+Dois editores amplamente utilizados nos sistemas Linux são vi e emacs. O Windows fornece o Bloco de Notas. Já o OS X fornece
+o TextEdit. Também há muitos editores freeware e shareware disponíveis on-line, incluindo Notepad++ (notepad-plus-plus.
+org), EditPlus (www.editplus.com), TextPad (www.textpad.com) e jEdit (www.jedit.org).
+
+Ambientes de desenvolvimento integrado (IDEs) fornecem ferramentas que suportam o processo de desenvolvimento de software,
+como editores e depuradores para localizar erros lógicos (que fazem programas serem executados incorretamente) e outros.
+Há muitos IDEs Java populares, incluindo:
+
+- Eclipse (www.eclipse.org)
+- NetBeans (www.netbeans.org)
+- IntelliJ IDEA (www.jetbrains.com)
+
+#### Palavras Reservadas JAVA:
+
+Modificadores de acesso
+
+- private: acesso apenas dentro da classe
+- protected: acesso por classes no mesmo pacote e subclasses
+- public: acesso de qualquer classe
+
+Modificadores de classes, variáveis ou métodos
+
+- abstract: classe que não pode ser instanciada ou método que precisa ser implementado por uma subclasse não abstrata
+- class: especifica uma classe
+- extends: indica a superclasse que a subclasse está estendendo
+- final: impossibilita que uma classe seja estendida, que um método seja sobrescrito ou que uma variável seja reinicializada
+- implements: indica as interfaces que uma classe irá implementar
+- interface: especifica uma interface
+- native: indica que um método está escrito em uma linguagem dependente de plataforma, como o C
+- new: instancia um novo objeto, chamando seu construtor
+- static: faz um método ou variável pertencer à classe ao invés de às instâncias
+- strictfp: usado em frente a um método ou classe para indicar que os números de ponto flutuante seguirão as regras de ponto flutuante em todas as expressões
+- synchronized:indica que um método só pode ser acessado por uma thread de cada vez
+- transient: impede a serialização de campos
+- volatile:indica que uma variável pode ser alterada durante o uso de threads
+
+Controle de fluxo dentro de um bloco de código
+
+- break: sai do bloco de codigo em que ele está
+- case: executa um bloco de código dependendo do teste do switch
+- continue: pula a execução do código que viria após essa linha e vai para a próxima passagem do loop
+- default: executa esse bloco de codigo caso nenhum dos teste de switch-case seja verdadeiro
+- do: executa um bloco de código uma vez, e então realiza um teste em conjunto com o while para determinar se o bloco deverá ser executado novamente
+- else: executa um bloco de código alternativo caso o teste if seja falso
+- for: usado para realizar um loop condicional de um bloco de código
+- if: usado para realizar um teste lógico de verdadeiro o falso
+- instanceof: determina se um objeto é uma instância de determinada classe, superclasse ou interface
+- return: retorna de um método sem executar qualquer código que venha depois desta linha (também pode retornar uma variável)
+- switch: indica a variável a ser comparada nas expressões case
+- while: executa um bloco de código repetidamente enquanto a condição for verdadeira
+
+Tratamento de erros
+
+- assert: testa uma expressão condicional para verificar uma suposição do programador
+- catch: declara o bloco de código usado para tratar uma exceção
+- finally: bloco de código, após um try-catch, que é executado independentemente do fluxo de programa seguido ao lidar com uma exceção
+- throw: usado para passar uma exceção para o método que o chamou
+- throws: indica que um método pode passar uma exceção para o método que o chamou
+- try: bloco de código que tentará ser executado, mas que pode causar uma exceção
+
+Controle de pacotes
+
+- import:importa pacotes ou classes para dentro do código
+- package: especifica a que pacote todas as classes de um arquivo pertencem
+
+Primitivos
+
+- boolean: um valor indicando verdadeiro ou falso
+- byte: um inteiro de 8 bits (signed)
+- char: um caracter unicode (16-bit unsigned)
+- double: um número de ponto flutuante de 64 bits (signed)
+- float: um número de ponto flutuante de 32 bits (signed)
+- int: um inteiro de 32 bits (signed)
+- long: um inteiro de 64 bits (signed)
+- short: um inteiro de 32 bits (signed)
+
+Variáveis de referência
+
+- super: refere-se a superclasse imediata
+- this: refere-se a instância atual do objeto
+
+Retorno de um método
+
+- void: indica que o método não tem retorno
+
+Palavras reservadas não utilizadas
+
+- const: Não utilize para declarar constantes; use public static final
+- goto: não implementada na linguagem Java por ser considerada prejudicial
+
+Literais reservados
+
+De acordo com a Java Language Specification, null, true e false são tecnicamente chamados de valores literais, e não keywords. 
+Se você tentar criar algum identificador com estes valores, você também terá um erro de compilação.
+
+FONTE:[As 52 palavras reservadas do Java](http://www.linhadecodigo.com.br/artigo/83/as-52-palavras-reservadas-do-java.aspx)
 
 [Voltar ao Índice](#indice)
 
