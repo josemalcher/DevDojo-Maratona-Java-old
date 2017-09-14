@@ -486,6 +486,9 @@ public class ImprimindoVariaveis {
 }
 
 ```
+Tipos primitivos Java:
+
+![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/tiposprimitivos.png?raw=true)
 
 
 
