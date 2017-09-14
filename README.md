@@ -473,7 +473,21 @@ FONTE:[As 52 palavras reservadas do Java](http://www.linhadecodigo.com.br/artigo
 
 ---
 
-## <a name="parte6"> </a>
+## <a name="parte6">Aula 05: Tipos primitivos, convenções de código e comentários</a>
+
+[Aula 05: Tipos primitivos, convenções de código e comentários](https://www.youtube.com/watch?v=g-_NSf0e0z8)
+
+```java
+public class ImprimindoVariaveis {
+    public static void main(String[] args) {
+        int idadeDosPais = 50;
+        System.out.println("A idade é "+idadeDosPais);
+    }
+}
+
+```
+
+
 
 [Voltar ao Índice](#indice)
 
