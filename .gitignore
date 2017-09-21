@@ -66,5 +66,4 @@ fabric.properties
 # End of https://www.gitignore.io/api/intellij
 .gitignore
 .idea/
-src/
 workspace-DEVDOJO-Maratona-JAVA.iml

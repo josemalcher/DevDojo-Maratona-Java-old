@@ -543,13 +543,13 @@ A Soma é 1020
 ```
 
 
-
-
 [Voltar ao Índice](#indice)
 
 ---
 
-## <a name="parte8"> </a>
+## <a name="parte8">Aula 07: Operador resto e operadores de comparação</a>
+
+
 
 [Voltar ao Índice](#indice)
 
