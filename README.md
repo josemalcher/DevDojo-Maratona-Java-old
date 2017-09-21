@@ -590,7 +590,23 @@ Process finished with exit code 0
 
 ---
 
-## <a name="parte9"> </a>
+## <a name="parte9">Aula 08: Operadores Lógicos</a>
+
+```java
+        int idade = 18;
+        float salario = 5000f;
+
+        System.out.println(idade >= 21 && salario >= 2000);
+        System.out.println(idade <= 16 && salario <= 2000);
+        // false
+        // false
+        
+        System.out.println(idade >= 21 || salario >= 2000);
+        System.out.println(idade <= 21 || salario >= 2000);
+        // true
+        // true
+```
+![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/operadores-logicos.png?raw=true)
 
 [Voltar ao Índice](#indice)
 
