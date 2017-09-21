@@ -549,7 +549,42 @@ A Soma é 1020
 
 ## <a name="parte8">Aula 07: Operador resto e operadores de comparação</a>
 
+Operador de módulo/resto
+```java
+    int numeroInteiro = 20;
+        long numeroLong = 200000L;
 
+        double numeroDouble = 10d;
+        float numeroFloat = 20f;
+        numeroFloat = (float) numeroDouble;
+
+        int resto = 20 % 2;
+        System.out.println("Resto é " + resto);
+        System.out.println(numeroDouble);
+
+```
+
+Operadores de comparação
+
+![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/operadores-comparacao-java.png?raw=true)
+
+```java
+        boolean dezMaiorqueVinte = 10 >= 20;
+        boolean dezMenorqueVinte = 10 <= 20;
+        System.out.println(dezMaiorqueVinte);
+        System.out.println(dezMenorqueVinte);
+        System.out.println(5 == 5);
+        System.out.println(5 != 5);
+        
+```
+```java
+false
+true
+true
+false
+
+Process finished with exit code 0
+```
 
 [Voltar ao Índice](#indice)
 
