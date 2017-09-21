@@ -612,7 +612,23 @@ Process finished with exit code 0
 
 ---
 
-## <a name="parte10"> </a>
+## <a name="parte10">Aula 09: Operadores de Atribuição</a>
+
+Exemplo:
+```java
+        int salario = 2000;
+        int numero = 11;
+
+        numero %= 2;
+        numero = numero % 2;
+        System.out.println(numero);
+```
+
+![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/atribuicao.PNG?raw=true)
+
+### Precedencia de Operadores
+
+![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/precedencia_operadores.png?raw=true)
 
 [Voltar ao Índice](#indice)
 
