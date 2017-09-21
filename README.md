@@ -626,9 +626,146 @@ Exemplo:
 
 ![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/atribuicao.PNG?raw=true)
 
-### Precedencia de Operadores
+### Precedência de Operadores
 
 ![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/precedencia_operadores.png?raw=true)
+
+Exemplo:
+
+![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/precedencia_java_01.PNG?raw=true)
+
+## Do livro Deitel 10
+
+2.5 Outra aplicação: adicionando inteiros
+```java
+        Scanner input = new Scanner(System.in);
+
+        int numero1;
+        int numero2;
+        int soma;
+
+        System.out.println("Entre com o primeiro numero");
+        numero1 = input.nextInt();
+
+        System.out.println("Entre com o segundo numero");
+        numero2 = input.nextInt();
+
+        soma = numero1 + numero2;
+
+        System.out.printf("A soma é %d%n", soma);
+```
+
+2.8 Tomada de decisão: operadores de igualdade e operadores relacionais
+```java
+        Scanner entrada = new Scanner(System.in);
+
+        int num1, num2;
+
+        System.out.println("Entre com o primeiro valor: ");
+        num1 = entrada.nextInt();
+
+        System.out.println("Entre com o segundo valor: ");
+        num2 = entrada.nextInt();
+
+        if(num1 == num2)
+            System.out.printf("%d == %d%n",num1,num2);
+        if(num1 != num2)
+            System.out.printf("%d != %d%n",num1,num2);
+        if(num1 < num2)
+            System.out.printf("%d < %d%n",num1,num2);
+        if(num1 > num2)
+            System.out.printf("%d > %d%n",num1,num2);
+        if(num1 <= num2)
+            System.out.printf("%d <= %d%n",num1,num2);
+        if(num1 >= num2)
+            System.out.printf("%d >= %d%n",num1,num2);
+```
+
+### Resumo do Capítulo 2 Introdução a aplicativos Java – entrada/saída e operadores
+
+Seção 2.2 Nosso primeiro programa Java: imprimindo uma linha de texto
+
+- Um aplicativo Java é executado quando você usa o comando "java" para iniciar a JVM.
+- Comentários documentam programas e melhoram sua legibilidade. O compilador ignora-os.
+- Um comentário que começa com // é de fim de linha — ele termina no fim da linha em que aparece.
+- Comentários tradicionais podem se estender por várias linhas e são delimitados por /*  e  */ .
+- Os comentários da Javadoc, delimitados por /** e */, permitem que você incorpore a documentação do programa no código. O programa utilitário javadoc gera páginas em HTML com base nesses comentários.
+- Um erro de sintaxe (também chamado erro de compilador, erro em tempo de compilação ou erro de compilação) ocorre quando o compilador encontra um código que viola as regras da linguagem do Java. É semelhante a um erro de gramática em um idioma natural.
+- Linhas em branco, caracteres de espaço em branco e caracteres de tabulação são conhecidos como espaço em branco. O espaço em branco torna os programas mais fáceis de ler e não é ignorado pelo compilador.
+- As palavras-chave são reservadas para uso pelo Java e sempre são escritas com todas as letras minúsculas.
+- A palavra-chave class introduz uma declaração de classe.
+- Por convenção, todos os nomes de classes em Java começam com uma letra maiúscula e apresentam a letra inicial de cada palavra que eles incluem em maiúscula (por exemplo, SampleClassName).
+- O nome de uma classe Java é um identificador — uma série de caracteres consistindo em letras, dígitos, sublinhados ( _ ) e sinais de cifrão ($) que não iniciem com um dígito nem contenham espaços.
+- O Java faz distinção entre maiúsculas e minúsculas.
+- O corpo de cada declaração de classe é delimitado por chaves, { e }.
+- Uma declaração de class public deve ser salva em um arquivo com o mesmo nome da classe seguido pela extensão “.java”.
+- O método main é o ponto de partida de cada aplicativo Java e deve iniciar com
+```java
+    public static void main(String[] args)
+```
+Caso contrário, a JVM não executará o aplicativo.
+
+- Os métodos realizam tarefas e retornam informações ao concluí-las. A palavra-chave void indica que um método executará uma tarefa, mas não retornará nenhuma informação.
+- As instruções instruem o computador a realizar ações.
+- Uma string entre aspas duplas é às vezes chamada de string de caracteres ou string literal.
+- O objeto de saída padrão (System.out) exibe caracteres na janela de comando.
+- O método System.out.println exibe seu argumento na janela de comando seguido por um caractere de nova linha para posicionar o cursor de saída no começo da próxima linha.
+- Você compila um programa com o comando javac. Se o programa não contiver nenhum erro de sintaxe, um arquivo de classe contendo os bytecodes Java que representam o aplicativo é criado. Esses bytecodes são interpretados pela JVM quando executamos o programa.
+- Para executar um aplicativo, digite java seguido pelo nome da classe que contém main.
+
+Seção 2.3 Modificando nosso primeiro programa Java
+
+- System.out.print exibe seu argumento e posiciona o cursor de saída imediatamente após o último caractere exibido.
+- Uma barra invertida (\) em uma string é um caractere de escape. O Java combina-o com o próximo caractere para formar uma sequência de escape. A sequência de escape \n representa o caractere de nova linha.
+
+Seção 2.4 Exibindo texto com printf
+
+- O método System.out.printf (f significa “formatado”) exibe os dados formatados.
+- O primeiro argumento do método printf é uma string de formato contendo especificadores de texto fixo e/ou de formato. Cada especificador de formato indica o tipo de dado a ser gerado e é um espaço reservado para um argumento correspondente que aparece após a string de formato.
+- Especificadores de formato iniciam com um sinal de porcentagem (%) e são seguidos por um caractere que representa o tipo de dado. O especificador de formato %s é um espaço reservado para uma string de caracteres.
+- O especificador de formato %n é um separador de linha portável. Você não pode usar %n no argumento para System.out.print ou System.out.println; mas o separador de linha gerado por System.out.println depois que ele exibe seu argumento é portável em diferentes sistemas operacionais.
+
+Seção 2.5 Outra aplicação: adicionando inteiros
+
+- Uma declaração import ajuda o compilador a localizar uma classe que é usada em um programa.
+- O rico conjunto do Java de classes predefinidas é agrupado em pacotes — chamados de grupos de classes. Esses são referidos como biblioteca de classes Java, ou Interface de Programação de Aplicativo Java (API Java).
+- Uma variável é uma posição na memória do computador na qual um valor pode ser armazenado para utilização posterior em um programa. Todas as variáveis devem ser declaradas com um nome e um tipo antes que possam ser utilizadas.
+- O nome de uma variável permite que o programa acesse o valor dela na memória.
+- Um Scanner (pacote java.util) permite que um programa leia os dados que utilizará. Antes de um Scanner poder ser utilizado, o programa deve criá-lo e especificar a origem dos dados.
+- Variáveis devem ser inicializadas a fim de serem preparadas para uso em um programa.
+- A expressão new Scanner(System.in) cria um Scanner que lê a partir do objeto de entrada padrão (System.in) — normalmente o teclado.
+- O tipo de dado int é utilizado para declarar variáveis que conterão valores de inteiro. O intervalo de valores para um int é –2.147.483.648 a +2.147.483.647.
+- Os tipos float e double especificam números reais com pontos decimais, como 3.4 e -11.19.
+- Variáveis do tipo char representam caracteres individuais, como uma letra maiúscula (por exemplo, A), um dígito (por exemplo, 7), um caractere especial (por exemplo, * ou %) ou uma sequência de escape (por exemplo, tab, \t).
+- Tipos como int, float, double e char são primitivos. Os nomes dos tipos primitivos são palavras-chave; portanto, todos devem aparecer em letras minúsculas.
+- Um prompt direciona o usuário a tomar uma ação específica.
+- O método Scanner nextInt obtém um inteiro para uso em um programa.
+- O operador de atribuição, =, permite ao programa atribuir um valor a uma variável. Ele é chamado operador binário, porque tem dois operandos.
+- Partes das declarações que contêm valores são chamadas expressões.
+- O especificador de formato %d é um marcador de lugar para um valor int.
+
+Seção 2.6 Conceitos de memória
+
+- Os nomes de variável correspondem a posições na memória do computador. Cada variável tem um nome, um tipo, um tamanho e um valor.
+- Um valor que é colocado em uma posição de memória substitui o valor anterior dessa posição, que é perdido.
+
+Seção 2.7 Aritmética
+
+- Os operadores aritméticos são + (adição), - (subtração), * (multiplicação), / (divisão) e % (resto).
+- A divisão de inteiros produz um quociente com inteiros.
+- O operador de resto, %, fornece o resto depois da divisão.
+- As expressões aritméticas devem ser escritas em forma de linha reta.
+- Se uma expressão contém parênteses aninhados, o conjunto mais interno é avaliado primeiro.
+- O Java aplica os operadores a expressões aritméticas em uma sequência precisa determinada pelas regras de precedência de operador.
+- Quando dizemos que operadores são aplicados da esquerda para a direita, estamos nos referindo à sua associatividade. Alguns operadores associam da direita para a esquerda.
+- Parênteses redundantes podem tornar uma expressão mais clara.
+
+Seção 2.8 Tomada de decisão: operadores de igualdade e operadores relacionais
+
+- A instrução if toma uma decisão baseada no valor de uma condição (verdadeiro ou falso).
+- As condições em instruções if podem ser formadas utilizando-se os operadores de igualdade (== e !=) e relacionais (>, <, >= e <=).
+- Uma instrução if começa com a palavra-chave if, seguida por uma condição entre parênteses, e espera uma instrução no seu corpo.
+- A instrução vazia é do tipo que não realiza qualquer tarefa.
 
 [Voltar ao Índice](#indice)
 
