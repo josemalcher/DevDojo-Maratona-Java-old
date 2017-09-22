@@ -771,7 +771,26 @@ Seção 2.8 Tomada de decisão: operadores de igualdade e operadores relacionais
 
 ---
 
-## <a name="parte11"> </a>
+## <a name="parte11">Aula 10: Controle de fluxo if, else if e else</a>
+
+Exemplo aula 10:
+```java
+        // idade < 15 cat infantil
+        // idade >= 15 && idade < 18 Ccat juvenil
+        // idade >= 18 cat adulto
+
+        int idade = 18;
+        String categoria;
+
+        if(idade < 15){
+            categoria = "infantil";
+        }else if(idade >=15 && idade < 18){
+            categoria = "Juvenil";
+        }else{
+            categoria = "Adulto";
+        }
+        System.out.println(categoria);
+```
 
 [Voltar ao Índice](#indice)
 
