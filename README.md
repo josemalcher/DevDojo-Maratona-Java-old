@@ -796,7 +796,17 @@ Exemplo aula 10:
 
 ---
 
-## <a name="parte12"> </a>
+## <a name="parte12">Aula 11: Controle de fluxo: Tabela verdade e mais.</a>
+
+Exemplo: Operador ternario
+```java
+        int idade = 15;
+        String status;
+
+        status = idade < 18 ? "Não Adulto" : "Adulto";
+        System.out.println(status);
+```
+
 
 [Voltar ao Índice](#indice)
 
