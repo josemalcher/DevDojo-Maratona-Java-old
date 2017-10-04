@@ -798,6 +798,9 @@ Exemplo aula 10:
 
 ## <a name="parte12">Aula 11: Controle de fluxo: Tabela verdade e mais.</a>
 
+
+O Java fornece o operador condicional (?:), que pode ser utilizado no lugar de uma instrução if...else. Isso pode tornar o código mais curto e mais claro. O operador condicional é o único operador ternário do Java (isto é, um operador que recebe três operandos). Juntos, os operandos e o símbolo ?: formam uma expressão condicional. O primeiro operando (à esquerda do ?) é uma expressão boolean (isto é, uma condição que é avaliada como um valor boolean — true ou false), o segundo operando (entre o ? e :) é o valor da expressão condicional se a expressão boolean for true e o terceiro operando (à direita do :) é o valor da expressão condicional se a expressão boolean for avaliada como false.
+
 Exemplo: Operador ternario
 ```java
         int idade = 15;
@@ -806,6 +809,88 @@ Exemplo: Operador ternario
         status = idade < 18 ? "Não Adulto" : "Adulto";
         System.out.println(status);
 ```
+
+Tabela Verdade
+
+```java
+// create truth table for && (conditional AND) operator
+        System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
+                "Conditional AND (&&)", "false && false", (false && false),
+                "false && true", (false && true),
+                "true && false", (true && false),
+                "true && true", (true && true));
+
+        // create truth table for || (conditional OR) operator
+        System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
+                "Conditional OR (||)", "false || false", (false || false),
+                "false || true", (false || true),
+                "true || false", (true || false),
+                "true || true", (true || true));
+
+        // create truth table for & (boolean logical AND) operator
+        System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
+                "Boolean logical AND (&)", "false & false", (false & false),
+                "false & true", (false & true),
+                "true & false", (true & false),
+                "true & true", (true & true));
+
+        // create truth table for | (boolean logical inclusive OR) operator
+        System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
+                "Boolean logical inclusive OR (|)",
+                "false | false", (false | false),
+                "false | true", (false | true),
+                "true | false", (true | false),
+                "true | true", (true | true));
+
+        // create truth table for ^ (boolean logical exclusive OR) operator
+        System.out.printf("%s%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n%n",
+                "Boolean logical exclusive OR (^)",
+                "false ^ false", (false ^ false),
+                "false ^ true", (false ^ true),
+                "true ^ false", (true ^ false),
+                "true ^ true", (true ^ true));
+
+        // create truth table for ! (logical negation) operator
+        System.out.printf("%s%n%s: %b%n%s: %b%n", "Logical NOT (!)",
+                "!false", (!false), "!true", (!true));
+```
+
+```java
+Conditional AND (&&)
+false && false: false
+false && true: false
+true && false: false
+true && true: true
+
+Conditional OR (||)
+false || false: false
+false || true: true
+true || false: true
+true || true: true
+
+Boolean logical AND (&)
+false & false: false
+false & true: false
+true & false: false
+true & true: true
+
+Boolean logical inclusive OR (|)
+false | false: false
+false | true: true
+true | false: true
+true | true: true
+
+Boolean logical exclusive OR (^)
+false ^ false: false
+false ^ true: true
+true ^ false: true
+true ^ true: false
+
+Logical NOT (!)
+!false: true
+!true: false
+```
+
 
 
 [Voltar ao Índice](#indice)
