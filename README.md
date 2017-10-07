@@ -1034,20 +1034,23 @@ public class ControleFluxo4 {
     public static void main(String[] args) {
 
         int contador = 11;
-
         while (contador < 10) {
             System.out.println(++contador);
         }
         contador = 0;
         do {
-            System.out.println("Dentro do Do While: " + contador++);
+            System.out.println("dentro do do while: "+ contador++);
         } while (contador < 10);
 
         for (int i = 0; i < 10; i++) {
-            System.out.println("Valor de i é: " + i);
+            System.out.println("valor de i é: " + i);
+            if(i==5){
+                break;
+            }
         }
     }
 }
+
 
 ```
 
@@ -1055,7 +1058,27 @@ public class ControleFluxo4 {
 
 ---
 
-## <a name="parte17"> </a>
+## <a name="parte17">Aula 16: Exercício estrutura de repetição</a>
+
+vídeo: https://www.youtube.com/watch?v=AR8I88rmyzg
+
+```java
+public class ExercicioControleFluxo3 {
+    public static void main(String[] args) {
+       
+        //Imprima todos os numeros pares de 0 até 100000
+       
+        int valor = 100000;
+        for (int i = 0; i <= valor; i++) {
+            if (i % 2 != 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+```
+
 
 [Voltar ao Índice](#indice)
 
