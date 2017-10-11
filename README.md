@@ -1084,9 +1084,201 @@ public class ExercicioControleFluxo3 {
 
 ---
 
-## <a name="parte96"></a>
+## <a name="parte18">Aula 17: Comando break and continue</a>
+
+link da aula: https://www.youtube.com/watch?v=ucin9R76150&index=18&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+public class ControleFluxo5 {
+    public static void main(String[] args) {
+        // Dado um valor de um carro, descubra em quantas parcelas ele pode ser parcelado.
+        //porém as parcelas não podem ser menores que 1000.
+
+        double valorTotal = 30000;
+        for(int parcela = 1 ; parcela <= valorTotal ; parcela++){
+            double valorParcala = valorTotal/parcela;
+
+            /*if(valorParcala >= 1000){
+                System.out.println("Parcela "+ parcela + " R$ " + valorParcala);
+
+            }else {
+                System.out.println("Saindo do laço");
+                break;
+            }*/
+            if(valorParcala < 1000){
+                break;
+            }
+            System.out.println("Parcela "+ parcela + " R$ " + valorParcala);
+
+        }
+        System.out.println("FORA do laço!");
+
+
+    }
+}
+
+```
+
+```java
+public class ControleFluxo6 {
+    public static void main(String[] args) {
+        // Dado um valor de um carro, descubra em quantas parcelas ele pode ser parcelado.
+        //porém as parcelas não podem ser menores que 1000.
+
+         double valorTotal = 30000;
+         for(int parcela = (int)valorTotal ; parcela >= 1 ; parcela--){
+             double valorParcela = valorTotal / parcela;
+
+             if(valorParcela <= 1000){
+                 continue;
+                 //códigos aqui... resultará em erro de compilação!
+             }
+             System.out.println("Parcela "+ parcela + " R$ " + valorParcela);
+             System.out.println("CODIGO CONSUMINDO MEMORIA!");
+         }
+
+    }
+}
+
+```
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte19"></a>
 
 
 [Voltar ao Índice](#indice)
 
 ---
+## <a name="parte20"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte21"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte22"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte23"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte24"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte25"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte26"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte27"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte28"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte29"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte30"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte31"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte32"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte33"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte34"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte35"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte36"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte37"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte38"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte39"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte40"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+
+
+
+
