@@ -1201,7 +1201,42 @@ public class Arrays2 {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte21"></a>
+## <a name="parte21">Aula 20: Arrays parte 3 foreach</a>
+
+Aula: https://www.youtube.com/watch?v=9zfJqV9TbYQ&index=21&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+public class Arrays3 {
+    public static void main(String[] args) {
+        int[] numeros = new int[5];
+        int[] numeros2 = {1, 2, 3, 4, 5};// tam: 5, index: 0 até 4
+        int[] numeros3 = new int[]{1, 2, 3, 4, 5};
+
+
+        for (int i = 0; i < numeros2.length; i++) {
+            System.out.println(numeros2[i]);
+        }
+       
+        // mais usado: 
+        for (int num : numeros2) {
+            System.out.println(num);
+        }
+    }
+}
+
+```
+
+```java
+public class Arrays4 {
+    public static void main(String[] args) {
+        String[] nomes = {"Juju", "Jao Jao", "Xu xu"};
+        for (String nome : nomes) {
+            System.out.println(nome);
+        }
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
