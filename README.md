@@ -1147,6 +1147,23 @@ public class ControleFluxo6 {
 ---
 ## <a name="parte19"></a>
 
+Aula: https://www.youtube.com/watch?v=S2d_WfyuNmI&index=19&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+public class Arrays1 {
+    public static void main(String[] args) {
+        int[] idades = new int[3];
+        idades[0] = 20;
+        idades[1] = 15;
+        idades[2] = 30;
+        System.out.println("Idedade 0 " + idades[0]);
+        System.out.println("Idedade 1 " + idades[1]);
+        System.out.println("Idedade 2 " + idades[2]);
+    }
+
+}
+```
+
 
 [Voltar ao Índice](#indice)
 
