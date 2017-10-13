@@ -1145,7 +1145,7 @@ public class ControleFluxo6 {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte19"></a>
+## <a name="parte19">Aula 19: Arrays parte 1</a>
 
 Aula: https://www.youtube.com/watch?v=S2d_WfyuNmI&index=19&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
 
@@ -1168,7 +1168,34 @@ public class Arrays1 {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte20"></a>
+## <a name="parte20">Aula 19: Arrays parte 2</a>
+
+Aula: https://www.youtube.com/watch?v=p5PJuCxlzo4&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=20
+
+```java
+public class Arrays2 {
+    public static void main(String[] args) {
+
+        //byte, short, int, long, float, double = 0
+        // char '\u0000' ' '
+        //boolean false;
+        // reference  null
+
+        String[] nomes = new String[3];
+        nomes[0] = "Naruto";
+        nomes[1] = "Goku";
+        nomes[2] = "Luffy";
+
+        for (int i = 0; i < nomes.length; i++) {
+            System.out.println((i + 1) + " nome " + nomes[i]);
+        }
+
+        nomes = new String[4];
+        // "nomes" perde a referência.. é criando um novo obj. array.
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
