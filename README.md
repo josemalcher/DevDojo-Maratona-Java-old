@@ -1315,8 +1315,37 @@ Ajuste nas pastas/pacotes do projeto atual!
 
 
 ---
-## <a name="parte25"></a>
+## <a name="parte25"> Aula 24: Introdução a classes parte 1</a>
 
+```java
+package com.devdojo.javacore.a.introducaoclasses.classes;
+
+public class Estudante {
+    public String nome;
+    public String matricula;
+    public int idade;
+}
+
+```
+```java
+package com.devdojo.javacore.a.introducaoclasses.test;
+
+import com.devdojo.javacore.a.introducaoclasses.classes.Estudante;
+
+public class EstudanteTest {
+    public static void main(String[] args) {
+        Estudante joao = new Estudante();
+        joao.nome = "Joao";
+        joao.matricula = "1212";
+        joao.idade = 15;
+
+        System.out.println(joao.nome);
+        System.out.println(joao.matricula);
+        System.out.println(joao.idade);
+    }
+}
+
+```
 
 [Voltar ao Índice](#indice)
 
@@ -1411,7 +1440,126 @@ Ajuste nas pastas/pacotes do projeto atual!
 [Voltar ao Índice](#indice)
 
 ---
+## <a name="parte41"></a>
 
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte42"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte43"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte44"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte45"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte46"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte47"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte48"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte49"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte50"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte51"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte52"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte53"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte54"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte55"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte56"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte57"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte58"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte59"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte60"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
 
 
 
