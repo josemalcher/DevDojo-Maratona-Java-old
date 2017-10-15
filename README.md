@@ -16,8 +16,8 @@ Adição de Resumos das matérias do Livro do Deitel: Java Como Programar ed.10�
 - [Aula 05: Tipos primitivos, convenções de código e comentários](#parte6)
 - [Aula 06: Continuação tipos primitivos, exercício e operadores](#parte7)
 - [Aula 07: Operador resto e operadores de comparação](#parte8)
-- [Aula 08: Operadores Lógicos](#parte9)
-- [Aula 09: Operadores de Atribuição](#parte10)
+- [Aula 08: com.devdojo.introducao.Operadores Lógicos](#parte9)
+- [Aula 09: com.devdojo.introducao.Operadores de Atribuição](#parte10)
 - [Aula 10: Controle de fluxo if, else if e else](#parte11)
 - [Aula 11: Controle de fluxo: Tabela verdade e mais.](#parte12)
 - [Aula 12: Controle de fluxo Resolução do exercício if else](#parte13)
@@ -478,7 +478,7 @@ FONTE:[As 52 palavras reservadas do Java](http://www.linhadecodigo.com.br/artigo
 [Aula 05: Tipos primitivos, convenções de código e comentários](https://www.youtube.com/watch?v=g-_NSf0e0z8)
 
 ```java
-public class ImprimindoVariaveis {
+public class com.devdojo.introducao.ImprimindoVariaveis {
     public static void main(String[] args) {
         int idadeDosPais = 50;
         System.out.println("A idade é "+idadeDosPais);
@@ -503,7 +503,7 @@ Exemplo 01:
 /**
  * Criado por José Stélio Malcher Jr. on 14/09/2017.
  */
-public class RelatorioPendencia {
+public class com.devdojo.introducao.RelatorioPendencia {
     public static void main(String[] args) {
         String nome = "Bulma";
         String endereco = "456 Rua saiadin";
@@ -521,7 +521,7 @@ Exemplo 02:
 /**
  * Criado por José Stélio Malcher Jr. on 15/09/2017.
  */
-public class Operadores {
+public class com.devdojo.introducao.Operadores {
     public static void main(String[] args) {
         int numero1 = 10;
         int numero2 = 20;
@@ -564,7 +564,7 @@ Operador de módulo/resto
 
 ```
 
-Operadores de comparação
+com.devdojo.introducao.Operadores de comparação
 
 ![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/operadores-comparacao-java.png?raw=true)
 
@@ -590,7 +590,7 @@ Process finished with exit code 0
 
 ---
 
-## <a name="parte9">Aula 08: Operadores Lógicos</a>
+## <a name="parte9">Aula 08: com.devdojo.introducao.Operadores Lógicos</a>
 
 ```java
         int idade = 18;
@@ -612,7 +612,7 @@ Process finished with exit code 0
 
 ---
 
-## <a name="parte10">Aula 09: Operadores de Atribuição</a>
+## <a name="parte10">Aula 09: com.devdojo.introducao.Operadores de Atribuição</a>
 
 Exemplo:
 ```java
@@ -626,7 +626,7 @@ Exemplo:
 
 ![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/atribuicao.PNG?raw=true)
 
-### Precedência de Operadores
+### Precedência de com.devdojo.introducao.Operadores
 
 ![Como java funciona](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/precedencia_operadores.png?raw=true)
 
@@ -901,7 +901,7 @@ Logical NOT (!)
 
 Exercício:
 ```java
-public class ExercicioControledeFluxo {
+public class com.devdojo.introducao.ExercicioControledeFluxo {
     public static void main(String[] args) {
         /*
         Crie uma variavel salario e imprima seu imposto
@@ -940,7 +940,7 @@ public class ExercicioControledeFluxo {
 link: https://www.youtube.com/watch?v=2vngkzInOEo 
 
 ```java
-public class ControleFluxo3 {
+public class com.devdojo.introducao.ControleFluxo3 {
     public static void main(String[] args) {
 
         byte dia = 5; // char, int, byte, short, enum e String
@@ -995,7 +995,7 @@ public class ControleFluxo3 {
 Aula: https://www.youtube.com/watch?v=wtkPdOzewDQ 
 
 ```java
-public class ExercicioControleFluxo2 {
+public class com.devdojo.introducao.ExercicioControleFluxo2 {
     public static void main(String[] args) {
 
         //  Crie um switch que dado um valor de 1 a 7
@@ -1030,7 +1030,7 @@ public class ExercicioControleFluxo2 {
 
 Aula: https://www.youtube.com/watch?v=bAqBN-_Iqs8 
 ```java
-public class ControleFluxo4 {
+public class com.devdojo.introducao.ControleFluxo4 {
     public static void main(String[] args) {
 
         int contador = 11;
@@ -1063,7 +1063,7 @@ public class ControleFluxo4 {
 vídeo: https://www.youtube.com/watch?v=AR8I88rmyzg
 
 ```java
-public class ExercicioControleFluxo3 {
+public class com.devdojo.introducao.ExercicioControleFluxo3 {
     public static void main(String[] args) {
        
         //Imprima todos os numeros pares de 0 até 100000
@@ -1089,7 +1089,7 @@ public class ExercicioControleFluxo3 {
 link da aula: https://www.youtube.com/watch?v=ucin9R76150&index=18&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
 
 ```java
-public class ControleFluxo5 {
+public class com.devdojo.introducao.ControleFluxo5 {
     public static void main(String[] args) {
         // Dado um valor de um carro, descubra em quantas parcelas ele pode ser parcelado.
         //porém as parcelas não podem ser menores que 1000.
@@ -1120,7 +1120,7 @@ public class ControleFluxo5 {
 ```
 
 ```java
-public class ControleFluxo6 {
+public class com.devdojo.introducao.ControleFluxo6 {
     public static void main(String[] args) {
         // Dado um valor de um carro, descubra em quantas parcelas ele pode ser parcelado.
         //porém as parcelas não podem ser menores que 1000.
@@ -1150,7 +1150,7 @@ public class ControleFluxo6 {
 Aula: https://www.youtube.com/watch?v=S2d_WfyuNmI&index=19&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
 
 ```java
-public class Arrays1 {
+public class com.devdojo.introducao.Arrays1 {
     public static void main(String[] args) {
         int[] idades = new int[3];
         idades[0] = 20;
@@ -1173,7 +1173,7 @@ public class Arrays1 {
 Aula: https://www.youtube.com/watch?v=p5PJuCxlzo4&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=20
 
 ```java
-public class Arrays2 {
+public class com.devdojo.introducao.Arrays2 {
     public static void main(String[] args) {
 
         //byte, short, int, long, float, double = 0
@@ -1206,7 +1206,7 @@ public class Arrays2 {
 Aula: https://www.youtube.com/watch?v=9zfJqV9TbYQ&index=21&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
 
 ```java
-public class Arrays3 {
+public class com.devdojo.introducao.Arrays3 {
     public static void main(String[] args) {
         int[] numeros = new int[5];
         int[] numeros2 = {1, 2, 3, 4, 5};// tam: 5, index: 0 até 4
@@ -1227,7 +1227,7 @@ public class Arrays3 {
 ```
 
 ```java
-public class Arrays4 {
+public class com.devdojo.introducao.Arrays4 {
     public static void main(String[] args) {
         String[] nomes = {"Juju", "Jao Jao", "Xu xu"};
         for (String nome : nomes) {
@@ -1245,7 +1245,7 @@ public class Arrays4 {
 ## <a name="parte22">Aula 21: Arrays parte 4 arrays multidimencionais</a>
 
 ```java
-public class Arrays5 {
+public class com.devdojo.introducao.Arrays5 {
     public static void main(String[] args) {
         int[][] dias = new int[2][2];
         dias[0][0] = 30;
@@ -1276,7 +1276,7 @@ public class Arrays5 {
 ## <a name="parte23">Aula 22: Arrays parte 5 arrays multidimencionais</a>
 
 ```java
-public class Arrays6 {
+public class com.devdojo.introducao.Arrays6 {
     public static void main(String[] args) {
         int[] arrInt = {1, 2, 3};
         int[] arrInt2 = new int[3];
@@ -1303,10 +1303,16 @@ public class Arrays6 {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte24"></a>
+## <a name="parte24">Aula 23: Introdução a pacotes</a>
+
+vídeo: https://www.youtube.com/watch?v=u1Nd4UIGJeI&index=24&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+Ajuste nas pastas/pacotes do projeto atual!
 
 
 [Voltar ao Índice](#indice)
+
+
 
 ---
 ## <a name="parte25"></a>

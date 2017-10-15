@@ -1,3 +1,5 @@
+package com.devdojo.introducao;
+
 public class Arrays1 {
     public static void main(String[] args) {
         int[] idades = new int[3];

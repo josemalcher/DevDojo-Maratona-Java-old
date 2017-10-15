@@ -1,3 +1,5 @@
+package com.devdojo.introducao;
+
 public class Arrays4 {
     public static void main(String[] args) {
         String[] nomes = {"Juju", "Jao Jao", "Xu xu"};

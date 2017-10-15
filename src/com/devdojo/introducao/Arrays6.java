@@ -1,3 +1,5 @@
+package com.devdojo.introducao;
+
 public class Arrays6 {
     public static void main(String[] args) {
         int[] arrInt = {1, 2, 3};
