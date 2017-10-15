@@ -1387,7 +1387,65 @@ public class CarroTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte27"></a>
+## <a name="parte27">Aula 26: Solução do exercício introdução a classes</a>
+
+```java
+package com.devdojo.javacore.a.introducaoclasses.classes;
+
+/**
+ * Crie os seguintes atributos para essa classe
+ * Nome
+ * Matricula
+ * rg
+ * cpf
+ * Crie uma classe de teste para preencher e imprimir os dados desse professor
+ **/
+
+
+public class Professor {
+    public String nome;
+    public String matricula;
+    public String rg;
+    public String cpf;
+}
+
+```
+
+```java
+package com.devdojo.javacore.a.introducaoclasses.test;
+
+import com.devdojo.javacore.a.introducaoclasses.classes.Professor;
+
+public class ProfessorTest {
+
+    public static void main(String[] args) {
+        Professor prof = new Professor();
+        prof.cpf ="111.122.131-20";
+        prof.nome = "Jurandir";
+        prof.rg = "20201-2";
+        prof.matricula = "1121";
+
+        Professor prof2 = new Professor();
+        prof2.cpf ="222.222.222-22";
+        prof2.nome = "Juciclei";
+        prof2.rg = "9982-2";
+        prof2.matricula = "0921C";
+
+        prof = prof2;
+
+        System.out.println(prof.cpf);
+        System.out.println(prof.nome);
+        System.out.println(prof.rg);
+        System.out.println(prof.matricula);
+        System.out.println("----------------------");
+        System.out.println(prof2.cpf);
+        System.out.println(prof2.nome);
+        System.out.println(prof2.rg);
+        System.out.println(prof2.matricula);
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
