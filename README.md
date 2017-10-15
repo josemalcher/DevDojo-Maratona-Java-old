@@ -1350,7 +1350,38 @@ public class EstudanteTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte26"></a>
+## <a name="parte26"> Aula 25: Introdução a classes parte 2 + exercício</a>
+
+```java
+package com.devdojo.javacore.a.introducaoclasses.classes;
+
+public class Carro {
+    public String placa;
+    public String modelo;
+    public float velocidadeMaxima;
+}
+
+```
+
+```java
+package com.devdojo.javacore.a.introducaoclasses.test;
+
+import com.devdojo.javacore.a.introducaoclasses.classes.Carro;
+
+public class CarroTest {
+    public static void main(String[] args) {
+        Carro carro = new Carro();
+        carro.modelo = "Fusca";
+        carro.placa = "QWJ1029";
+        carro.velocidadeMaxima = 120f;
+        System.out.println(carro.placa);
+        System.out.println(carro.modelo);
+        System.out.println(carro.velocidadeMaxima);
+    }
+}
+
+```
+
 
 
 [Voltar ao Índice](#indice)
