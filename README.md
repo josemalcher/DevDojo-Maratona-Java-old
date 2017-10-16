@@ -1658,7 +1658,120 @@ public class CalculadoraTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte32"></a>
+## <a name="parte32">Aula 31: Métodos com parâmetros tipo reference pt 01</a>
+
+AULA: https://www.youtube.com/watch?v=WHd3PRcFbQw&index=32&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.b.introducaometodos.classes;
+
+public class Calculadora {
+    public void somaDoisNumeros() {
+        System.out.println(5 + 5);
+    }
+
+    public void subtraiDoisNumeros() {
+        System.out.println(5 - 5);
+    }
+
+    public void multiplicaDoisNumeros(double num1, int num2) {
+        System.out.println(num1 * num2);
+    }
+
+    public double divideDoisNumeros(double num1, double num2) {
+        if (num2 != 0) {
+            return num1 / num2;
+        }
+        return 0;
+    }
+
+    public void imprimeDoisNumerosDivididos(double num1, double num2) {
+        if (num2 != 0) {
+            System.out.println(num1 / num2);
+            return; //funciona como um break
+        }
+        System.out.println("Não é possivel dividir por 0 ");
+    }
+
+    public static void alteraDoisNumeros(int a, int b) {
+        a = 30;
+        b = 40;
+        System.out.println("Dentro do altera dois numeros");
+        System.out.println("num1: " + a);
+        System.out.println("num2: " + b);
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.b.introducaometodos.test;
+
+import com.devdojo.javacore.b.introducaometodos.classes.Calculadora;
+
+public class ParametrosTest {
+    public static void main(String[] args) {
+
+        Calculadora calc = new Calculadora();
+
+        int num1 = 5;
+        int num2 = 10;
+
+        calc.alteraDoisNumeros(num1, num2);
+
+        System.out.println("dentro do teste");
+        System.out.println("num1: " + num1);
+        System.out.println("num2: " + num2);
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.b.introducaometodos.classes;
+
+public class Professor {
+    public String nome;
+    public String matricula;
+    public String rg;
+    public String cpf;
+
+
+    public void imprime(Professor aux) {
+        System.out.println("----------------------");
+        System.out.println(this.cpf);
+        System.out.println(this.matricula);
+        System.out.println(this.nome);
+        System.out.println(this.rg);
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.b.introducaometodos.test;
+
+import com.devdojo.javacore.b.introducaometodos.classes.Professor;
+
+public class ProfessorTest {
+    public static void main(String[] args) {
+        Professor prof = new Professor();
+        prof.cpf = "122.222.232-20";
+        prof.matricula = "11122";
+        prof.nome = "Marcos";
+        prof.rg = "122211-5";
+
+        Professor prof2 = new Professor();
+        prof2.cpf = "222.111.888-20";
+        prof2.matricula = "44444";
+        prof2.nome = "Joana";
+        prof2.rg = "2122-6";
+
+        prof.imprime(prof);
+        prof.imprime(prof2); // algo aqui errado que parece não está certo!!
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
