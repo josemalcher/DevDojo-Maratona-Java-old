@@ -8,6 +8,9 @@ public class CalculadoraTest {
         Calculadora calculadora = new Calculadora();
         calculadora.somaDoisNumeros();
         calculadora.subtraiDoisNumeros();
-        System.out.println("Continuando a exec....");
+
+        calculadora.multiplicaDoisNumeros(55.5,5);
+
+
     }
 }
