@@ -15,5 +15,8 @@ public class CalculadoraTest {
         double result = calculadora.divideDoisNumeros(20,2);
         System.out.println(result);
 
+        System.out.println("imprimindo dois numeros divididos");
+        calculadora.imprimeDoisNumerosDivididos(20,0);
+
     }
 }
