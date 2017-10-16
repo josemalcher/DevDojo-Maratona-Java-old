@@ -1451,13 +1451,49 @@ public class ProfessorTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte28"></a>
+## <a name="parte28">Aula 27: Introdução a métodos</a>
+
+Aula: https://www.youtube.com/watch?v=GEjFD9qvUVM&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=28
+
+```java
+package com.devdojo.javacore.b.introducaometodos.classes;
+
+public class Calculadora {
+    public void somaDoisNumeros() {
+        System.out.println(5 + 5);
+    }
+
+    public void subtraiDoisNumeros() {
+        System.out.println(5 - 5);
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.b.introducaometodos.test;
+
+import com.devdojo.javacore.b.introducaometodos.classes.Calculadora;
+
+public class CalculadoraTest {
+    public static void main(String[] args) {
+
+        Calculadora calculadora = new Calculadora();
+        calculadora.somaDoisNumeros();
+        calculadora.subtraiDoisNumeros();
+        System.out.println("Continuando a exec....");
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte29"></a>
+## <a name="parte29">Aula 28: Métodos com parâmetros</a>
+
+
 
 
 [Voltar ao Índice](#indice)
