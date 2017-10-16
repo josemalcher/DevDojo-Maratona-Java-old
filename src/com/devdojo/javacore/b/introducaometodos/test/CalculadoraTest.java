@@ -11,6 +11,9 @@ public class CalculadoraTest {
 
         calculadora.multiplicaDoisNumeros(55.5,5);
 
+        System.out.println("divisao de dois numeros");
+        double result = calculadora.divideDoisNumeros(20,2);
+        System.out.println(result);
 
     }
 }
