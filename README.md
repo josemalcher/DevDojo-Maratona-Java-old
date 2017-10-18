@@ -1832,7 +1832,101 @@ public class ProfessorTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte34"></a>
+## <a name="parte34">Aula 33: Passagem de parâmetros varargs</a>
+
+Aula: https://www.youtube.com/watch?v=L151aRhoNSM&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=34
+
+```java
+package com.devdojo.javacore.b.introducaometodos.classes;
+
+public class Calculadora {
+    public void somaDoisNumeros() {
+        System.out.println(5 + 5);
+    }
+
+    public void subtraiDoisNumeros() {
+        System.out.println(5 - 5);
+    }
+
+    public void multiplicaDoisNumeros(double num1, int num2) {
+        System.out.println(num1 * num2);
+    }
+
+    public double divideDoisNumeros(double num1, double num2) {
+        if (num2 != 0) {
+            return num1 / num2;
+        }
+        return 0;
+    }
+
+    public void imprimeDoisNumerosDivididos(double num1, double num2) {
+        if (num2 != 0) {
+            System.out.println(num1 / num2);
+            return; //funciona como um break
+        }
+        System.out.println("Não é possivel dividir por 0 ");
+    }
+
+    public void alteraDoisNumeros(int a, int b) {
+        a = 30;
+        b = 40;
+        System.out.println("Dentro do altera dois numeros");
+        System.out.println("num1: " + a);
+        System.out.println("num2: " + b);
+    }
+
+
+    public void somaArray(int[] numeros) {
+        int soma = 0;
+        for (int num : numeros) {
+            soma += num;
+        }
+        System.out.println(soma);
+    }
+
+    //public void somaVarArgs(double numero1, int... numeros) //precisa sempre ser o último
+    public void somaVarArgs(int... numeros) { //apenas um por assinatura de método!
+        int soma = 0;
+        for (int num : numeros) {
+            soma += num;
+        }
+        System.out.println(soma);
+    }
+}
+
+```
+
+
+```java
+package com.devdojo.javacore.b.introducaometodos.test;
+
+import com.devdojo.javacore.b.introducaometodos.classes.Calculadora;
+
+public class CalculadoraTest {
+    public static void main(String[] args) {
+
+        Calculadora calculadora = new Calculadora();
+        calculadora.somaDoisNumeros();
+        calculadora.subtraiDoisNumeros();
+
+        calculadora.multiplicaDoisNumeros(55.5,5);
+
+        System.out.println("divisao de dois numeros");
+        double result = calculadora.divideDoisNumeros(20,2);
+        System.out.println(result);
+
+        System.out.println("imprimindo dois numeros divididos");
+        calculadora.imprimeDoisNumerosDivididos(20,0);
+
+        int[] numeros = {1,2,3,4,5};
+        calculadora.somaArray(numeros);
+        calculadora.somaVarArgs(1,2,3,4,5);
+
+    }
+}
+
+```
+
 
 
 [Voltar ao Índice](#indice)

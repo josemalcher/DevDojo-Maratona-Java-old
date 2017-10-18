@@ -18,5 +18,9 @@ public class CalculadoraTest {
         System.out.println("imprimindo dois numeros divididos");
         calculadora.imprimeDoisNumerosDivididos(20,0);
 
+        int[] numeros = {1,2,3,4,5};
+        calculadora.somaArray(numeros);
+        calculadora.somaVarArgs(1,2,3,4,5);
+
     }
 }
