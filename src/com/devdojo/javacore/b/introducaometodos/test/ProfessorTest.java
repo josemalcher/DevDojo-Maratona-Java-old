@@ -16,7 +16,7 @@ public class ProfessorTest {
         prof2.nome = "Joana";
         prof2.rg = "2122-6";
 
-        prof.imprime(prof);
-        prof.imprime(prof2); // algo aqui errado que parece não está certo!!
+        prof.imprime();
+        prof2.imprime();
     }
 }

@@ -1777,7 +1777,56 @@ public class ProfessorTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte33"></a>
+## <a name="parte33">Aula 32: Passagem de objeto como parâmetro e this pt 02</a>
+
+Aula: https://www.youtube.com/watch?v=JWukxtWTG7E&index=33&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.b.introducaometodos.classes;
+
+public class Professor {
+    public String nome;
+    public String matricula;
+    public String rg;
+    public String cpf;
+
+
+    public void imprime() {
+        System.out.println("----------------------");
+        System.out.println(this.cpf);
+        System.out.println(this.matricula);
+        System.out.println(this.nome);
+        System.out.println(this.rg);
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.b.introducaometodos.test;
+
+import com.devdojo.javacore.b.introducaometodos.classes.Professor;
+
+public class ProfessorTest {
+    public static void main(String[] args) {
+        Professor prof = new Professor();
+        prof.cpf = "122.222.232-20";
+        prof.matricula = "11122";
+        prof.nome = "Marcos";
+        prof.rg = "122211-5";
+
+        Professor prof2 = new Professor();
+        prof2.cpf = "222.111.888-20";
+        prof2.matricula = "44444";
+        prof2.nome = "Joana";
+        prof2.rg = "2122-6";
+
+        prof.imprime();
+        prof2.imprime();
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
