@@ -6,11 +6,13 @@ public class EstudanteTest {
     public static void main(String[] args) {
 
         Estudante estudante = new Estudante();
-        estudante.nome = "William Suane";
-        estudante.idade = 18;
-        //estudante.notas = new double[]{3, 2, 9.5};
+        estudante.setNome("William Suane");
+        estudante.setIdade(18);
+        estudante.setNotas(new double[]{3, 2, 9.5});
         estudante.print();
         estudante.tirarMedia();
+
+        System.out.println(estudante.getNome());
 
     }
 }
