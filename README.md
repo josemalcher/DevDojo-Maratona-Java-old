@@ -1946,8 +1946,69 @@ DEVMEDIA: http://www.devmedia.com.br/o-que-e-uml-e-diagramas-de-caso-de-uso-intr
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte36"></a>
+## <a name="parte36">Aula 35: Exercício sobre métodos</a>
 
+AULA: https://www.youtube.com/watch?v=Qx4-p5fn_rA&index=36&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.b.introducaometodos.classes;
+
+public class Estudante {
+    public String nome;
+    public int idade;
+    public double[] notas;
+
+    public void print() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Idade: " + this.idade);
+        if (this.notas != null) {
+            for (double nota : this.notas) {
+                System.out.print(nota + " ");
+            }
+        }
+    }
+
+    public void tirarMedia() {
+        if (this.notas == null) {
+            System.out.println("Esse aluno não possui notas");
+            return;
+    }
+        double media = 0;
+        for (double nota : this.notas) {
+            media += nota;
+        }
+        media = media / this.notas.length;
+
+        if (media > 6) {
+            System.out.println("\n A média é: " + media + " situação: aprovado");
+        } else {
+            System.out.println("\n A média é: " + media + " situação: reprovado");
+        }
+    }
+
+}
+
+```
+
+```java
+package com.devdojo.javacore.b.introducaometodos.test;
+
+import com.devdojo.javacore.b.introducaometodos.classes.Estudante;
+
+public class EstudanteTest {
+    public static void main(String[] args) {
+
+        Estudante estudante = new Estudante();
+        estudante.nome = "William Suane";
+        estudante.idade = 18;
+        //estudante.notas = new double[]{3, 2, 9.5};
+        estudante.print();
+        estudante.tirarMedia();
+
+    }
+}
+
+```
 
 [Voltar ao Índice](#indice)
 
