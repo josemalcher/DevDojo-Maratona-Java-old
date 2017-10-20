@@ -1932,7 +1932,15 @@ public class CalculadoraTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte35"></a>
+## <a name="parte35">Aula 34: Introdução a UML</a>
+
+AULA: https://www.youtube.com/watch?v=LXWXkvRIn-k&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=35
+
+RESUMO SOBRE UML: http://josemalcher.net/resumo-diagramas-uml/
+
+DEVMEDIA: http://www.devmedia.com.br/o-que-e-uml-e-diagramas-de-caso-de-uso-introducao-pratica-a-uml/23408
+
+
 
 
 [Voltar ao Índice](#indice)
