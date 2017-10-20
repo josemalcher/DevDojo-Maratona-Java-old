@@ -2106,13 +2106,116 @@ public class EstudanteTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte38"></a>
+## <a name="parte38">Aula 37: Modificador de acesso private, get e set pt 02</a>
+
+Aula: https://www.youtube.com/watch?v=9MVmEPb7GYc&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=38
+
+```java
+package com.devdojo.javacore.b.introducaometodos.classes;
+
+public class Estudante {
+    private String nome;
+    private int idade;
+    private double[] notas;
+    private boolean aprovado;
+
+    public void print() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Idade: " + this.idade);
+        if (this.notas != null) {
+            for (double nota : this.notas) {
+                System.out.print(nota + " ");
+            }
+        }
+    }
+
+    public void tirarMedia() {
+        if (this.notas == null) {
+            System.out.println("Esse aluno não possui notas");
+            return;
+        }
+        double media = 0;
+        for (double nota : this.notas) {
+            media += nota;
+        }
+        media = media / this.notas.length;
+
+        if (media > 6) {
+            this.aprovado = true;
+            System.out.println("\n A média é: " + media + " situação: aprovado");
+        } else {
+            this.aprovado = false;
+            System.out.println("\n A média é: " + media + " situação: reprovado");
+        }
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        if(idade < 1){
+            System.out.println("Você não pode alterar a idade!");
+            return;
+        }
+        this.idade = idade;
+    }
+
+    public double[] getNotas() {
+        return notas;
+    }
+
+    public void setNotas(double[] notas) {
+        this.notas = notas;
+    }
+
+    public boolean isAprovado() { //get
+        return aprovado;
+    }
+
+    /*public void setAprovado(boolean aprovado) {
+        this.aprovado = aprovado;
+    }*/
+}
+
+```
+```java
+package com.devdojo.javacore.b.introducaometodos.test;
+
+import com.devdojo.javacore.b.introducaometodos.classes.Estudante;
+
+public class EstudanteTest {
+    public static void main(String[] args) {
+
+        Estudante estudante = new Estudante();
+        estudante.setNome("William Suane");
+        estudante.setIdade(18);
+        estudante.setNotas(new double[]{3, 2, 9.5});
+        estudante.print();
+        estudante.tirarMedia();
+
+        System.out.println(estudante.getNome());
+        System.out.println("Aluno Aprovado? "+ estudante.isAprovado() );
+
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte39"></a>
+## <a name="parte39">Aula 38: Sobrecarga de métodos</a>
+
 
 
 [Voltar ao Índice](#indice)

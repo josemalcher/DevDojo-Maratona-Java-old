@@ -13,6 +13,7 @@ public class EstudanteTest {
         estudante.tirarMedia();
 
         System.out.println(estudante.getNome());
+        System.out.println("Aluno Aprovado? "+ estudante.isAprovado() );
 
     }
 }
