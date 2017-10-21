@@ -2216,7 +2216,87 @@ public class EstudanteTest {
 ---
 ## <a name="parte39">Aula 38: Sobrecarga de métodos</a>
 
+AUla: https://www.youtube.com/watch?v=uq4O__CGPdo&index=39&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
 
+```java
+package com.devdojo.javacore.c.sobrecargametodos.classes;
+
+public class Funcionario {
+
+    private String nome;
+    private String cpf;
+    private double salario;
+    private String rg;
+
+    public Funcionario(String nome, String cpf, double salario, String rg) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.salario = salario;
+        this.rg = rg;
+    }
+
+    public void init(String nome, String cpf, double salario) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.salario = salario;
+    }
+
+    public void init(String nome, String cpf, double salario, String rg) {
+        init(nome, cpf, salario);
+        this.rg = rg;
+    }
+
+    public void imprime() {
+        System.out.println(this.nome);
+        System.out.println(this.cpf);
+        System.out.println(this.salario);
+        System.out.println(this.rg);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.c.sobrecargametodos.test;
+
+import com.devdojo.javacore.c.sobrecargametodos.classes.Funcionario;
+
+public class FuncionarioTest {
+    public static void main(String[] args) {
+
+        Funcionario funcionario = new Funcionario("Chica da Silva", "111.222.333-44", 4500, "122212-9");
+
+        funcionario.imprime();
+
+
+    }
+}
+
+```
 
 [Voltar ao Índice](#indice)
 
