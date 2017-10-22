@@ -2301,7 +2301,49 @@ public class FuncionarioTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte40"></a>
+## <a name="parte40">Aula 39: Construtores e sobrecarga de construtores pt 01</a>
+
+AULA: https://www.youtube.com/watch?v=IcR84k4NV1M&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=40
+
+```java
+public class Funcionario {
+
+    private String nome;
+    private String cpf;
+    private double salario;
+    private String rg;
+
+    public Funcionario() {
+        System.out.println("Dentro do COntrutor!");
+    }
+
+    public Funcionario(String nome, String cpf, double salario, String rg) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.salario = salario;
+        this.rg = rg;
+    }
+
+```
+```java
+package com.devdojo.javacore.c.sobrecargametodos.test;
+
+import com.devdojo.javacore.c.sobrecargametodos.classes.Funcionario;
+
+public class FuncionarioTest {
+    public static void main(String[] args) {
+
+        Funcionario funcionario2 = new Funcionario();
+        Funcionario funcionario = new Funcionario("Chica da Silva", "111.222.333-44", 4500, "122212-9");
+
+        funcionario.imprime();
+        funcionario2.imprime();
+
+
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)

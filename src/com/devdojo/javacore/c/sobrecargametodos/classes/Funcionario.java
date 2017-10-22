@@ -7,6 +7,10 @@ public class Funcionario {
     private double salario;
     private String rg;
 
+    public Funcionario() {
+        System.out.println("Dentro do COntrutor!");
+    }
+
     public Funcionario(String nome, String cpf, double salario, String rg) {
         this.nome = nome;
         this.cpf = cpf;
