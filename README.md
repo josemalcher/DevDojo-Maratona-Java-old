@@ -2681,7 +2681,7 @@ public class Cliente {
 
     private static int[] parcelas;
 
-    static { // é executado apenas uma vez | pode haver mais outros <<----
+    static { // é executado apenas uma vez   | pode haver mais outros <<----
         parcelas = new int[100];
         System.out.println("Dentro do bloco de inicializacao estatico");
         for(int i=1; i<=100;i++){
@@ -2724,8 +2724,37 @@ public class ClientTeste {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte46"></a>
+## <a name="parte46">Aula 45: UML e Associação de classes</a>
 
+```java
+package com.devdojo.javacore.g.associacao.classes;
+
+public class Pessoa {
+    private Departamento departamento;
+    private Endereco endereco;
+}
+
+```
+```java
+package com.devdojo.javacore.g.associacao.classes;
+
+public class Departamento {
+    private Pessoa[] pessoas;
+}
+
+```
+```java
+package com.devdojo.javacore.g.associacao.classes;
+
+public class Endereco {
+    private String rua;
+    private String bairro;
+    private String Estado;
+
+    // private Pessoa[] pessoas;
+}
+
+```
 
 [Voltar ao Índice](#indice)
 
