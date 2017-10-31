@@ -2349,8 +2349,93 @@ public class FuncionarioTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte41"></a>
+## <a name="parte41">Aula 40: Construtores e sobrecarga de construtores pt 02</a>
 
+https://www.youtube.com/watch?v=RufTevo0S0M&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=41
+
+```java
+package com.devdojo.javacore.d.obrecargaconstrutores.classes;
+
+public class Estudante {
+    private String matricula;
+    private String nome;
+    private double[] notas;
+    private String dataMatricula;
+
+    public Estudante(String matricula, String nome, double[] notas) {
+        this.matricula = matricula;
+        this.nome = nome;
+        this.notas = notas;
+    }
+
+    public Estudante(String matricula, String nome, double[] notas, String dataMatricula) {
+        this(matricula,nome,notas); //sempre deve ser a primeira linha!
+        /*this.matricula = matricula;
+        this.nome = nome;
+        this.notas = notas;*/
+        this.dataMatricula = dataMatricula;
+    }
+
+    public Estudante() {
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double[] getNotas() {
+        return notas;
+    }
+
+    public void setNotas(double[] notas) {
+        this.notas = notas;
+    }
+
+    public String getDataMatricula() {
+        return dataMatricula;
+    }
+
+    public void setDataMatricula(String dataMatricula) {
+        this.dataMatricula = dataMatricula;
+    }
+
+    public void imprime() {
+        System.out.println(this.nome);
+        System.out.println(this.matricula);
+        for (double nota : notas) {
+            System.out.println(nota + " ");
+        }
+        System.out.println(this.dataMatricula);
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.d.obrecargaconstrutores.test;
+
+import com.devdojo.javacore.d.obrecargaconstrutores.classes.Estudante;
+
+public class EstudanteTest {
+    public static void main(String[] args) {
+        Estudante est = new Estudante("12212","Carlitos", new double[]{5,7,9},"13/04/2016");
+        est.imprime();
+    }
+}
+
+```
 
 [Voltar ao Índice](#indice)
 
