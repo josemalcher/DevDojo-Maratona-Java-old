@@ -2664,8 +2664,62 @@ public class CarroTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte45"></a>
+## <a name="parte45">Aula 44: Bloco de inicialização</a>
 
+Aula: https://www.youtube.com/watch?v=QD3_CfitYDU&index=45&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.f.modificadorestatico.classes;
+
+public class Cliente {
+
+    // 1 - Bloco de inicializacao estático é executado quando a JVM carregar a classe (é executado apenas 1 vez)
+    // 2 - Alocado espaco na memoria para o objeto que será criado
+    // 3 - Cada atributo de classe é criado e inicializado com seus valores default ou valores explicitos
+    // 4 - Bloco de inicializacao é executado
+    // 5 - O construtor é executado
+
+    private static int[] parcelas;
+
+    static { // é executado apenas uma vez | pode haver mais outros <<----
+        parcelas = new int[100];
+        System.out.println("Dentro do bloco de inicializacao estatico");
+        for(int i=1; i<=100;i++){
+            parcelas[i-1] = i;
+        }
+    }
+
+    public Cliente(){
+    }
+
+    public static int[] getParcelas() {
+        return parcelas;
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.f.modificadorestatico.teste;
+
+import com.devdojo.javacore.f.modificadorestatico.classes.Cliente;
+
+public class ClientTeste {
+    public static void main(String[] args) {
+        Cliente c = new Cliente();
+        Cliente c1 = new Cliente();
+        Cliente c2 = new Cliente();
+        System.out.println("Exibindo quantidade de parcelas possiveis");
+        /*for(int parcela : c.getParcelas()){
+            System.out.print(parcela + " ");
+        }*/
+        System.out.println("tamanho: " + Cliente.getParcelas().length);
+
+    }
+}
+
+
+```
 
 [Voltar ao Índice](#indice)
 
