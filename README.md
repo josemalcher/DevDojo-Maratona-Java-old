@@ -2440,7 +2440,57 @@ public class EstudanteTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte42"></a>
+## <a name="parte42">Aula 41: Blocos de inicialização</a>
+
+```java
+package com.devdojo.javacore.e.blocodeinicializacao.classes;
+
+public class Cliente {
+
+    // 1 - Alocado espaco na memoria para o objeto que será criado
+    // 2 - Cada atributo de classe é criado e inicializado com seus valores default ou valores explicitos
+    // 3 - Bloco de inicializacao é executado
+    // 4 - O construtor é executado
+
+    private int[] parcelas;
+
+    { //início do bloco de inicialização
+        parcelas = new int[100];
+        System.out.println("Dentro do bloco de inicializacao");
+        for (int i = 1; i <= 100; i++) {
+            parcelas[i - 1] = i;
+        }
+    } // fim
+
+    public Cliente() {
+    }
+
+    public int[] getParcelas() {
+        return parcelas;
+    }
+
+    public void setParcelas(int[] parcelas) {
+        this.parcelas = parcelas;
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.e.blocodeinicializacao.test;
+
+import com.devdojo.javacore.e.blocodeinicializacao.classes.Cliente;
+
+public class ClienteTeste {
+    public static void main(String[] args) {
+        Cliente c = new Cliente();
+        System.out.println("Exibindo quantidade de parcelas possiveis");
+        for(int parcela : c.getParcelas()){
+            System.out.print(parcela + " ");
+        }
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
