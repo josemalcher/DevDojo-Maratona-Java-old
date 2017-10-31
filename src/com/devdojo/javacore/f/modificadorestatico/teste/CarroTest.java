@@ -5,8 +5,8 @@ import com.devdojo.javacore.f.modificadorestatico.classes.Carro;
 public class CarroTest {
     public static void main(String[] args) {
 
-        Carro.velocidadeLimite = 220;
-
+        //Carro.velocidadeLimite = 320;
+        Carro.setVelocidadeLimite(320);
         Carro c1 = new Carro("BMW", 280);
         Carro c2 = new Carro("Audi", 275);
         Carro c3 = new Carro("Mercedes", 290);

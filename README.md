@@ -2580,7 +2580,85 @@ public class CarroTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte44"></a>
+## <a name="parte44">Aula 43: Métodos Estáticos</a>
+
+
+```java
+package com.devdojo.javacore.f.modificadorestatico.classes;
+
+public class Carro {
+    private String nome;
+    private double velocidadeMaxima;
+    public static double velocidadeLimite = 240;
+
+    public Carro(String nome, double velocidadeMaxima) {
+        this.nome = nome;
+        this.velocidadeMaxima = velocidadeMaxima;
+    }
+
+    public Carro() {
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getVelocidadeMaxima() {
+        return velocidadeMaxima;
+    }
+
+    public void setVelocidadeMaxima(double velocidadeMaxima) {
+        this.velocidadeMaxima = velocidadeMaxima;
+    }
+
+    public static double getVelocidadeLimite() {
+        return velocidadeLimite;
+    }
+
+    public static void setVelocidadeLimite(double velocidadeLimite) {
+        Carro.velocidadeLimite = velocidadeLimite;
+    }
+
+    public void imprime(){
+        System.out.println("--------------------");
+        System.out.println("Nome " + this.nome);
+        System.out.println("Velocidade maxima = " + this.velocidadeMaxima);
+        System.out.println("Velocidade limite = " + velocidadeLimite);
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.f.modificadorestatico.teste;
+
+import com.devdojo.javacore.f.modificadorestatico.classes.Carro;
+
+public class CarroTest {
+    public static void main(String[] args) {
+
+        //Carro.velocidadeLimite = 320;
+        Carro.setVelocidadeLimite(320);
+        Carro c1 = new Carro("BMW", 280);
+        Carro c2 = new Carro("Audi", 275);
+        Carro c3 = new Carro("Mercedes", 290);
+        c1.imprime();
+        c2.imprime();
+        c3.imprime();
+
+        System.out.println("#######################");
+
+
+        c1.imprime();
+        c2.imprime();
+        c3.imprime();
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
