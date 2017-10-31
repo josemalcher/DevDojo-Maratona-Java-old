@@ -2496,8 +2496,86 @@ public class ClienteTeste {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte43"></a>
+## <a name="parte43">Aula 42: Modificador static</a>
 
+Aula: https://www.youtube.com/watch?v=JFFfIN14oc4&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=43
+
+```java
+package com.devdojo.javacore.f.modificadorestatico.classes;
+
+public class Carro {
+    private String nome;
+    private double velocidadeMaxima;
+    public static double velocidadeLimite = 240;
+
+    public Carro(String nome, double velocidadeMaxima) {
+        this.nome = nome;
+        this.velocidadeMaxima = velocidadeMaxima;
+    }
+
+    public Carro() {
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getVelocidadeMaxima() {
+        return velocidadeMaxima;
+    }
+
+    public void setVelocidadeMaxima(double velocidadeMaxima) {
+        this.velocidadeMaxima = velocidadeMaxima;
+    }
+
+ /*   public  double getVelocidadeLimite() {
+        return velocidadeLimite;
+    }
+
+    public  void setVelocidadeLimite(double velocidadeLimite) {
+        this.velocidadeLimite = velocidadeLimite;
+    }*/
+
+    public void imprime(){
+        System.out.println("--------------------");
+        System.out.println("Nome " + this.nome);
+        System.out.println("Velocidade maxima = " + this.velocidadeMaxima);
+        System.out.println("Velocidade limite = " + velocidadeLimite);
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.f.modificadorestatico.teste;
+
+import com.devdojo.javacore.f.modificadorestatico.classes.Carro;
+
+public class CarroTest {
+    public static void main(String[] args) {
+
+        Carro.velocidadeLimite = 220;
+
+        Carro c1 = new Carro("BMW", 280);
+        Carro c2 = new Carro("Audi", 275);
+        Carro c3 = new Carro("Mercedes", 290);
+        c1.imprime();
+        c2.imprime();
+        c3.imprime();
+
+        System.out.println("#######################");
+
+
+        c1.imprime();
+        c2.imprime();
+        c3.imprime();
+    }
+}
+
+```
 
 [Voltar ao Índice](#indice)
 
