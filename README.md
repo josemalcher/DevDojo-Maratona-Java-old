@@ -2789,5 +2789,22 @@ Local: rua e bairro.
 
 ---
 
+## <a name="parte48">Aula 47: Exercício associação pt 02</a>
+
+![Diagrama de Classes](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/diagrama_classes.PNG?raw=true)
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte49">Aula 47: Exercício associação pt 02</a>
+
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+
 
 
