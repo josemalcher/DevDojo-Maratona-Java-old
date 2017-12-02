@@ -2726,6 +2726,8 @@ public class ClientTeste {
 ---
 ## <a name="parte46">Aula 45: UML e Associação de classes</a>
 
+Aula: https://www.youtube.com/watch?v=3OR-8ExlwvA&index=46&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
 ```java
 package com.devdojo.javacore.g.associacao.classes;
 
@@ -2759,91 +2761,33 @@ public class Endereco {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte47"></a>
+## <a name="parte47">Aula 46: Exercício associação pt 01</a>
 
+Crie um Sistema que gerencia seminários
 
-[Voltar ao Índice](#indice)
+Deverá cadastrar os seminários, cadastrar os alunos, cadastrat os professores e cadastrar um local.
 
----
-## <a name="parte48"></a>
+Um aluno poderá estar em apenas um seminário.
 
+um seminário poderá ter nenhum ou vários alunos.
 
-[Voltar ao Índice](#indice)
+Um professor poderá ministrar um ou vários seminários.
 
----
-## <a name="parte49"></a>
+Um seminário só poderá ter um professor.
 
+Um seminário deverá ter um local.
 
-[Voltar ao Índice](#indice)
+Seminário: título
 
----
-## <a name="parte50"></a>
+Aluno: Nome e idade
 
+Professor? Nome e esécialidade.
 
-[Voltar ao Índice](#indice)
-
----
-## <a name="parte51"></a>
-
+Local: rua e bairro.
 
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte52"></a>
-
-
-[Voltar ao Índice](#indice)
-
----
-## <a name="parte53"></a>
-
-
-[Voltar ao Índice](#indice)
-
----
-## <a name="parte54"></a>
-
-
-[Voltar ao Índice](#indice)
-
----
-## <a name="parte55"></a>
-
-
-[Voltar ao Índice](#indice)
-
----
-## <a name="parte56"></a>
-
-
-[Voltar ao Índice](#indice)
-
----
-## <a name="parte57"></a>
-
-
-[Voltar ao Índice](#indice)
-
----
-## <a name="parte58"></a>
-
-
-[Voltar ao Índice](#indice)
-
----
-## <a name="parte59"></a>
-
-
-[Voltar ao Índice](#indice)
-
----
-## <a name="parte60"></a>
-
-
-[Voltar ao Índice](#indice)
-
----
-
 
 
 
