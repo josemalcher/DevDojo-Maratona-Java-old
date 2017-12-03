@@ -2797,7 +2797,9 @@ Local: rua e bairro.
 
 ---
 
-## <a name="parte49">Aula 47: Exercício associação pt 02</a>
+## <a name="parte49">Aula 48: Exercício associação de classes pt 03</a>
+
+https://www.youtube.com/watch?v=2blCZZJ3HP4&index=49&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
 
 
 
@@ -2805,6 +2807,316 @@ Local: rua e bairro.
 
 ---
 
+
+## <a name="parte50">Aula 49: Exercício associação pt 04</a>
+
+https://www.youtube.com/watch?v=TKE2Wk_ehks&index=50&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.g.associacao.classes_exercicio;
+
+public class Aluno {
+    private String nome;
+    private int idade;
+    private Seminario seminario;
+
+
+    public Aluno(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    public Aluno() {
+    }
+
+    public void print() {
+        System.out.println("---------------Relatório de alunos---------------");
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Idade: " + this.idade);
+        if (this.seminario != null)
+            System.out.println("Seminario inscrito: " + this.seminario.getTitulo());
+        else
+            System.out.println("Aluno não está inscrito em nenhum seminário");
+
+
+    }
+
+
+    public Seminario getSeminario() {
+        return seminario;
+    }
+
+    public void setSeminario(Seminario seminario) {
+        this.seminario = seminario;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+}
+```
+```java
+package com.devdojo.javacore.g.associacao.classes_exercicio;
+
+public class Seminario {
+    private String titulo;
+    private Aluno[] alunos;
+    private Professor professor;
+    private Local local;
+
+    public Seminario() {
+    }
+
+    public Seminario(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void print() {
+        System.out.println("---------------Relatório de seminários---------------");
+        System.out.println("Título: " + this.titulo);
+        if (this.professor != null)
+            System.out.println("Professor palestrante: " + this.professor.getNome());
+        else
+            System.out.println("Nenhum professor cadastrado para esse seminário");
+
+        if (this.local != null)
+            System.out.println("Local " + this.local.getRua() + " Bairro: " + this.local.getBairro());
+        else
+            System.out.println("Nenhum local cadastrado para esse seminário");
+
+        if (alunos != null && alunos.length != 0) {
+            System.out.println("---- Alunos participantes ----");
+            for (Aluno aluno : alunos) {
+                System.out.println(aluno.getNome());
+            }
+            return;
+        }
+        System.out.println("Nenhum aluno cadastrado");
+    }
+
+
+    public Local getLocal() {
+        return local;
+    }
+
+    public void setLocal(Local local) {
+        this.local = local;
+    }
+
+    public Professor getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
+
+    public Aluno[] getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(Aluno[] alunos) {
+        this.alunos = alunos;
+    }
+
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.g.associacao.classes_exercicio;
+
+public class Professor {
+    private String nome;
+    private String especialidade;
+    private Seminario[] seminarios;
+
+    public Professor() {
+    }
+
+    public Professor(String nome, String especialidade) {
+
+        this.nome = nome;
+        this.especialidade = especialidade;
+    }
+
+    public void print() {
+        System.out.println("---------------Relatório de professor---------------");
+        System.out.println("Nome do professor: " + this.nome);
+        System.out.println("Especialidade: " + this.especialidade);
+        if (seminarios != null && seminarios.length != 0) {
+            System.out.println("Seminários participantes");
+            for (Seminario sem : seminarios) {
+                System.out.println(sem.getTitulo());
+            }
+            return;
+        }
+        System.out.println("Professor não vinculado a nenhum seminário");
+
+    }
+
+    public Seminario[] getSeminarios() {
+        return seminarios;
+    }
+
+    public void setSeminarios(Seminario[] seminarios) {
+        this.seminarios = seminarios;
+    }
+
+    public String getNome() {
+
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
+    }
+}
+```
+```java
+package com.devdojo.javacore.g.associacao.classes_exercicio;
+
+public class Local {
+    private String rua;
+    private String bairro;
+
+    public Local() {
+    }
+
+    public Local(String rua, String bairro) {
+        this.rua = rua;
+        this.bairro = bairro;
+    }
+
+    public void print(){
+        System.out.println("---------------Relatório de local---------------");
+
+        System.out.println("Rua: "+this.rua);
+        System.out.println("Bairro: "+this.bairro);
+
+    }
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+}
+```
+
+Teste
+
+```java
+package com.devdojo.javacore.g.associacao.teste;
+
+import com.devdojo.javacore.g.associacao.classes_exercicio.Aluno;
+import com.devdojo.javacore.g.associacao.classes_exercicio.Local;
+import com.devdojo.javacore.g.associacao.classes_exercicio.Professor;
+import com.devdojo.javacore.g.associacao.classes_exercicio.Seminario;
+
+public class AssociacaoTest {
+    public static void main(String[] args) {
+        Aluno aluno = new Aluno("William Suane", 27);
+        Aluno aluno2 = new Aluno("Joana D'Arc", 20);
+
+        Seminario sem = new Seminario("Como ser um baita programador e ficar rico");
+        Professor prof = new Professor("Yoda","Usar a força para programar");
+        Local local = new Local("Rua das araras", "mato");
+
+        aluno.setSeminario(sem);
+        aluno2.setSeminario(sem);
+
+        sem.setProfessor(prof);
+        sem.setLocal(local);
+        sem.setAlunos(new Aluno[]{aluno,aluno2});
+
+        Seminario[] semArray = new Seminario[1];
+        semArray[0] = sem;
+        prof.setSeminarios(semArray);
+
+        sem.print();
+        prof.print();
+
+
+    }
+}
+```
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte51"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+
+## <a name="parte52"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte53"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte54"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte55"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
 
 
 
