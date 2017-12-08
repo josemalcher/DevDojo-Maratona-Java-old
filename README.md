@@ -3591,7 +3591,67 @@ Process finished with exit code 0
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte56"></a>
+## <a name="parte56">Aula 55: Sobrescrita de métodos</a>
+
+```java
+package com.devdojo.javacore.i.sobrescrita.classes;
+
+public class Pessoa {
+
+    private String nome;
+    private int idade;
+
+/*    @Override
+    public String toString() {
+        return "NOME: " + this.nome + " | Idade "+ this.idade;
+    }*/
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "nome='" + nome + '\'' +
+                ", idade=" + idade +
+                '}';
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+
+}
+
+```
+
+```java
+package com.devdojo.javacore.i.sobrescrita.teste;
+
+import com.devdojo.javacore.i.sobrescrita.classes.Pessoa;
+
+public class PessoaTeste {
+    public static void main(String[] args) {
+
+        Pessoa p = new Pessoa();
+        p.setNome("JSOE");
+        p.setIdade(33);
+        System.out.println(p);
+
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
