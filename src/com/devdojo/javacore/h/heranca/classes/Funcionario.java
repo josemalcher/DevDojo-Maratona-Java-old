@@ -10,6 +10,10 @@ public class Funcionario extends Pessoa{
         imprimeReciboPagamento();
     }
 
+    public Funcionario(String nome) {
+        super(nome);
+    }
+
     public void imprimeReciboPagamento(){
         System.out.println("Eu " + super.nome + " RECEBI R$ "+this.salario);
 

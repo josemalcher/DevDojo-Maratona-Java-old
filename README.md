@@ -3313,8 +3313,118 @@ public class Pessoa {
 
 ---
 
-## <a name="parte54"></a>
+## <a name="parte54">Aula 53: Herança e construtores pt 04</a>
 
+```java
+package com.devdojo.javacore.h.heranca.classes;
+
+public class Pessoa {
+    protected String nome;
+    private String cpf;
+    private Endereco endereco;
+
+    public Pessoa(String nome) {
+        this.nome = nome;
+    }
+
+    public Pessoa(String nome, String cpf) {
+        this(nome);
+        this.cpf = cpf;
+    }
+
+    public void imprime(){
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("CPF: " + this.getCpf());
+        System.out.println("Endereço: " + this.getEndereco().getRua());
+        System.out.println("Endereço: " + this.getEndereco().getBairro());
+
+    }
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.h.heranca.classes;
+
+public class Funcionario extends Pessoa{
+    private double salario;
+
+    @Override
+    public void imprime() {
+        super.imprime();
+        System.out.println("Salario = " + this.salario);
+        imprimeReciboPagamento();
+    }
+
+    public Funcionario(String nome) {
+        super(nome);
+    }
+
+    public void imprimeReciboPagamento(){
+        System.out.println("Eu " + super.nome + " RECEBI R$ "+this.salario);
+
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.h.heranca.teste;
+
+import com.devdojo.javacore.h.heranca.classes.Endereco;
+import com.devdojo.javacore.h.heranca.classes.Funcionario;
+import com.devdojo.javacore.h.heranca.classes.Pessoa;
+
+public class HerancaTeste {
+    public static void main(String[] args) {
+        Pessoa p = new Pessoa("José Malcher Jr.");
+        p.setCpf("123456789");
+        Endereco end = new Endereco();
+        end.setBairro("Cidade Velha");
+        end.setRua("Rua Tal tal tal");
+        p.setEndereco(end);
+        p.imprime();
+        System.out.println("------------------------------------");
+        Funcionario f = new Funcionario("FUncionario 01");
+        f.setCpf("987654321");
+        f.setSalario(1500);
+        f.setEndereco(end);
+        f.imprime();
+    }
+}
+
+```
 
 [Voltar ao Índice](#indice)
 
