@@ -3233,7 +3233,80 @@ public class Funcionario extends Pessoa{
 
 ---
 
-## <a name="parte53"></a>
+## <a name="parte53"> Aula 52: Herança e Modificador Protected pt 03</a>
+
+```java
+package com.devdojo.javacore.h.heranca.classes;
+
+public class Funcionario extends Pessoa{
+    private double salario;
+
+    @Override
+    public void imprime() {
+        super.imprime();
+        System.out.println("Salario = " + this.salario);
+        imprimeReciboPagamento();
+    }
+
+    public void imprimeReciboPagamento(){
+        System.out.println("Eu " + super.nome + " RECEBI R$ "+this.salario);
+
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.h.heranca.classes;
+
+public class Pessoa {
+    protected String nome;
+    private String cpf;
+    private Endereco endereco;
+
+    public void imprime(){
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("CPF: " + this.getCpf());
+        System.out.println("Endereço: " + this.getEndereco().getRua());
+        System.out.println("Endereço: " + this.getEndereco().getBairro());
+
+    }
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
@@ -3248,6 +3321,156 @@ public class Funcionario extends Pessoa{
 ---
 
 ## <a name="parte55"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte56"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte57"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte58"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte59"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte60"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte61"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte62"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte63"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte64"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte65"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte66"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte67"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte68"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte69"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte70"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte71"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte72"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte73"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte74"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte75"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte76"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte77"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte78"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte79"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte80"></a>
 
 
 [Voltar ao Índice](#indice)
