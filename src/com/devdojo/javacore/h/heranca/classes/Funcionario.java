@@ -2,6 +2,16 @@ package com.devdojo.javacore.h.heranca.classes;
 
 public class Funcionario extends Pessoa{
     private double salario;
+    {
+        System.out.println("Blcoo de Inicialização de funcionario 1");
+    }
+    {
+        System.out.println("Blcoo de Inicialização de funcionario 2");
+    }
+    static {
+        System.out.println("BLCOO DE INICIALIZAÇÂO ESTATICO FUNCIONARIO 1");
+    }
+
 
     @Override
     public void imprime() {
@@ -12,6 +22,7 @@ public class Funcionario extends Pessoa{
 
     public Funcionario(String nome) {
         super(nome);
+        System.out.println("DENTRO DO CONSTRUTOR DE FUNCIONARIO");
     }
 
     public void imprimeReciboPagamento(){

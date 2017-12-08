@@ -3312,8 +3312,8 @@ public class Pessoa {
 [Voltar ao Índice](#indice)
 
 ---
-
-## <a name="parte54">Aula 53: Herança e construtores pt 04</a>
+Aula 53: Herança e construtores pt 04
+## <a name="parte54"></a>
 
 ```java
 package com.devdojo.javacore.h.heranca.classes;
@@ -3430,7 +3430,162 @@ public class HerancaTeste {
 
 ---
 
-## <a name="parte55"></a>
+## <a name="parte55">Aula 54: Herança e Sequência de inicialização pt 05</a>
+
+1 - Espaço em memória é alocado para o objeto sendo construído;  
+2 - Cada um dos atributos odo objeto é inicializado com os valores default;  
+3 - O construtor da superclasse é chamado;  
+4 - A inicialização dos atributos via declaração e o código do bloco de inicialização da superclasse sçai executados na ordem em que aparecem;  
+5 - O código do construtor da super classe é chamado;  
+6 - Passo 4 para a subclasse é executado;  
+7 - O código do construtor da classe é executado.  
+
+```java
+package com.devdojo.javacore.h.heranca.classes;
+
+public class Pessoa {
+    protected String nome;
+    private String cpf;
+    private Endereco endereco;
+
+    public Pessoa(String nome) {
+        System.out.println("Dentro do bloco Construtor PESSOA");
+        this.nome = nome;
+    }
+
+    public Pessoa(String nome, String cpf) {
+        this(nome);
+        this.cpf = cpf;
+    }
+
+    static{
+        System.out.println("Bloco de Inicialização Estático de PESSOA");
+    }
+    {
+        System.out.println("Blcoo de inicialização PESSOA 1");
+    }
+    {
+        System.out.println("Blcoo de inicialização PESSOA 2");
+    }
+
+    public void imprime(){
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("CPF: " + this.getCpf());
+        System.out.println("Endereço: " + this.getEndereco().getRua());
+        System.out.println("Endereço: " + this.getEndereco().getBairro());
+
+    }
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.h.heranca.classes;
+
+public class Funcionario extends Pessoa{
+    private double salario;
+    {
+        System.out.println("Blcoo de Inicialização de funcionario 1");
+    }
+    {
+        System.out.println("Blcoo de Inicialização de funcionario 2");
+    }
+    static {
+        System.out.println("BLCOO DE INICIALIZAÇÂO ESTATICO FUNCIONARIO 1");
+    }
+
+
+    @Override
+    public void imprime() {
+        super.imprime();
+        System.out.println("Salario = " + this.salario);
+        imprimeReciboPagamento();
+    }
+
+    public Funcionario(String nome) {
+        super(nome);
+        System.out.println("DENTRO DO CONSTRUTOR DE FUNCIONARIO");
+    }
+
+    public void imprimeReciboPagamento(){
+        System.out.println("Eu " + super.nome + " RECEBI R$ "+this.salario);
+
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.h.heranca.teste;
+
+import com.devdojo.javacore.h.heranca.classes.Endereco;
+import com.devdojo.javacore.h.heranca.classes.Funcionario;
+import com.devdojo.javacore.h.heranca.classes.Pessoa;
+
+public class HerancaTeste {
+    public static void main(String[] args) {
+        //Pessoa p = new Pessoa("José Malcher Jr.");
+        //p.setCpf("123456789");
+        Endereco end = new Endereco();
+        end.setBairro("Cidade Velha");
+        end.setRua("Rua Tal tal tal");
+        //p.setEndereco(end);
+        //p.imprime();
+        System.out.println("------------------------------------");
+        Funcionario f = new Funcionario("FUncionario 01");
+        f.setCpf("987654321");
+        f.setSalario(1500);
+        f.setEndereco(end);
+        //f.imprime();
+    }
+}
+
+```
+```
+"C:\Program Files\Java\jdk1.8.0_144\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\lib\idea_rt.jar=56855:C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_144\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\rt.jar;C:\Users\josemalcher\Documents\09-Workspaces\workspace-DEVDOJO-Maratona-JAVA\out\production\workspace-DEVDOJO-Maratona-JAVA" com.devdojo.javacore.h.heranca.teste.HerancaTeste
+------------------------------------
+Bloco de Inicialização Estático de PESSOA
+BLCOO DE INICIALIZAÇÂO ESTATICO FUNCIONARIO 1
+Blcoo de inicialização PESSOA 1
+Blcoo de inicialização PESSOA 2
+Dentro do bloco Construtor PESSOA
+Blcoo de Inicialização de funcionario 1
+Blcoo de Inicialização de funcionario 2
+DENTRO DO CONSTRUTOR DE FUNCIONARIO
+
+Process finished with exit code 0
+```
 
 
 [Voltar ao Índice](#indice)
