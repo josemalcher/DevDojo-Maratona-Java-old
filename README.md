@@ -3820,7 +3820,99 @@ public class ClienteTeste {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte59"></a>
+## <a name="parte59"> Aula 58: Enumeração pt 02</a>
+
+```java
+package com.devdojo.javacore.k.enumeracao.classes;
+
+public enum TipoCliente {
+    PESSOA_FISICA(1, "Pessoa Fisica"),PESSOA_JURIDICA(2,"Pessoa Juridica");
+
+    private int tipo;
+    private String nome;
+    TipoCliente(int tipo, String nome) { //sempre é private
+        this.tipo = tipo;
+        this.nome = nome;
+    }
+    public int getTipo() {
+        return tipo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.k.enumeracao.classes;
+
+public class Cliente {
+
+    public enum TipoPagamento{
+        AVISTA, APRAZO
+    }
+    private TipoPagamento tipoPagamento;
+    private String nome;
+    private TipoCliente tipo;
+
+    public Cliente(TipoPagamento tipoPagamento, String nome, TipoCliente tipo) {
+        this.tipoPagamento = tipoPagamento;
+        this.nome = nome;
+        this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "tipoPagamento=" + tipoPagamento +
+                ", nome='" + nome + '\'' +
+                ", tipo=" + tipo +
+                ", Numero do Tipo Pagamento: " + tipo.getTipo()+
+                ", Tipo Pagamento: " + tipo.getNome()+
+                '}';
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public TipoCliente getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoCliente tipo) {
+        this.tipo = tipo;
+    }
+
+    public TipoPagamento getTipoPagamento() {
+        return tipoPagamento;
+    }
+
+    public void setTipoPagamento(TipoPagamento tipoPagamento) {
+        this.tipoPagamento = tipoPagamento;
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.k.enumeracao.teste;
+
+        import com.devdojo.javacore.k.enumeracao.classes.Cliente;
+        import com.devdojo.javacore.k.enumeracao.classes.TipoCliente;
+
+public class ClienteTeste {
+    public static void main(String[] args) {
+        Cliente cliente = new Cliente(Cliente.TipoPagamento.AVISTA,"JOSE JR.", TipoCliente.PESSOA_FISICA);
+        System.out.println(cliente);
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
