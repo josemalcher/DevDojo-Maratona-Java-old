@@ -3918,7 +3918,62 @@ public class ClienteTeste {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte60"></a>
+## <a name="parte60">Aula 59: Enumeração pt 03</a>
+
+```java
+package com.devdojo.javacore.k.enumeracao.classes;
+
+public enum TipoCliente {
+    PESSOA_FISICA(1, "Pessoa Fisica"),PESSOA_JURIDICA(2,"Pessoa Juridica"){
+        public String getId(){
+            return "B";
+        }
+    };
+
+    private int tipo;
+    private String nome;
+    TipoCliente(int tipo, String nome) { //sempre é private
+        this.tipo = tipo;
+        this.nome = nome;
+    }
+    public int getTipo() {
+        return tipo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    //Constant stpecific class body -> copo de classe especifico constante
+
+    public String getId(){
+        return "A";
+    }
+
+
+}
+
+```
+
+```java
+package com.devdojo.javacore.k.enumeracao.teste;
+
+        import com.devdojo.javacore.k.enumeracao.classes.Cliente;
+        import com.devdojo.javacore.k.enumeracao.classes.TipoCliente;
+
+public class ClienteTeste {
+    public static void main(String[] args) {
+        Cliente cliente = new Cliente(Cliente.TipoPagamento.AVISTA,"JOSE JR.", TipoCliente.PESSOA_FISICA);
+
+        System.out.println(TipoCliente.PESSOA_FISICA.getId());
+        System.out.println(TipoCliente.PESSOA_JURIDICA.getId());
+
+        System.out.println(cliente);
+
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
