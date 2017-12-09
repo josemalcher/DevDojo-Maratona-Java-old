@@ -3751,7 +3751,70 @@ public class CarroTeste {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte58"></a>
+## <a name="parte58">Aula 57: Enumeração pt 01</a>
+```java
+package com.devdojo.javacore.k.enumeracao.classes;
+
+public enum TipoCliente {
+    PESSOA_FISICA,PESSOA_JURIDICA;
+
+}
+
+```
+
+```java
+package com.devdojo.javacore.k.enumeracao.classes;
+
+public class Cliente {
+    private String nome;
+    private TipoCliente tipo;
+
+    public Cliente(String nome, TipoCliente tipo) {
+        this.nome = nome;
+        this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nome='" + nome + '\'' +
+                ", tipo=" + tipo +
+                '}';
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public TipoCliente getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoCliente tipo) {
+        this.tipo = tipo;
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.k.enumeracao.teste;
+
+import com.devdojo.javacore.k.enumeracao.classes.Cliente;
+import com.devdojo.javacore.k.enumeracao.classes.TipoCliente;
+
+public class ClienteTeste {
+    public static void main(String[] args) {
+        Cliente cliente = new Cliente("JOSE JR.", TipoCliente.PESSOA_FISICA);
+        System.out.println(cliente);
+    }
+}
+
+```
+
 
 
 [Voltar ao Índice](#indice)
