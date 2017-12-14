@@ -3979,7 +3979,135 @@ public class ClienteTeste {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte61"></a>
+## <a name="parte61">Aula 60: Classes abstratas pt 01</a>
+
+```java
+package com.devdojo.javacore.l.classesabstratas.classes;
+
+public abstract class Funcionario {
+    protected String nome;
+    protected String clt;
+    protected double salario;
+
+    public Funcionario() {
+    }
+
+    public Funcionario(String nome, String clt, double salario) {
+        this.nome = nome;
+        this.clt = clt;
+        this.salario = salario;
+    }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "nome='" + nome + '\'' +
+                ", clt='" + clt + '\'' +
+                ", salario=" + salario +
+                '}';
+    }
+
+    public abstract void calculaSalario();//{
+        //this.salario = salario + (salario + 0.1);
+    //}
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getClt() {
+        return clt;
+    }
+
+    public void setClt(String clt) {
+        this.clt = clt;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.l.classesabstratas.classes;
+
+public class Gerente extends Funcionario {
+
+    public Gerente() {
+    }
+
+    public Gerente(String nome, String clt, double salario) {
+        super(nome, clt, salario);
+    }
+
+    @Override
+    public void calculaSalario() {
+        this.salario = salario + (salario * 0.3);
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.l.classesabstratas.classes;
+
+public class Vendedor extends Funcionario {
+    private double totalVendas;
+
+    public Vendedor() {
+    }
+
+    public Vendedor(String nome, String clt, double salario, double totalVendas) {
+        super(nome, clt, salario);
+        this.totalVendas = totalVendas;
+    }
+
+    @Override
+    public void calculaSalario() {
+        this.salario = salario + (totalVendas * 0.05);
+    }
+
+    public double getTotalVendas() {
+        return totalVendas;
+    }
+
+    public void setTotalVendas(double totalVendas) {
+        this.totalVendas = totalVendas;
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.l.classesabstratas.testes;
+
+import com.devdojo.javacore.l.classesabstratas.classes.Gerente;
+import com.devdojo.javacore.l.classesabstratas.classes.Vendedor;
+
+public class FuncionarioTeste {
+    public static void main(String[] args) {
+
+        //Funcionario f = new Funcionario("JOSE", "123-22", 2000);
+        Gerente g = new Gerente("JULIANA", "4444-33", 2000);
+        Vendedor v = new Vendedor("JOSE", "123-22", 2000, 1000);
+        //f.calculaSalario();
+        g.calculaSalario();
+        v.calculaSalario();
+        //System.out.println(f);
+        System.out.println(g);
+        System.out.println(v);
+
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
