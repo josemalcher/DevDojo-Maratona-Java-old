@@ -10,6 +10,11 @@ public class Gerente extends Funcionario {
     }
 
     @Override
+    public void imprime() {
+        System.out.println("Dentro do imprime de GERENTE");
+    }
+
+    @Override
     public void calculaSalario() {
         this.salario = salario + (salario * 0.3);
     }

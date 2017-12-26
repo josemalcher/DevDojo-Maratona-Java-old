@@ -1,7 +1,7 @@
 package com.devdojo.javacore.l.classesabstratas.classes;
 
-public abstract class Funcionario {
-    protected String nome;
+public abstract class Funcionario extends Pessoa {
+
     protected String clt;
     protected double salario;
 
@@ -26,6 +26,10 @@ public abstract class Funcionario {
     public abstract void calculaSalario();//{
         //this.salario = salario + (salario + 0.1);
     //}
+
+
+    @Override
+    public abstract void imprime() ;
 
     public String getNome() {
         return nome;

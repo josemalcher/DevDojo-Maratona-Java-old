@@ -12,6 +12,11 @@ public class Vendedor extends Funcionario {
     }
 
     @Override
+    public void imprime() {
+        System.out.println("DEntro de Imprime de VEndedor");
+    }
+
+    @Override
     public void calculaSalario() {
         this.salario = salario + (totalVendas * 0.05);
     }
