@@ -4629,7 +4629,25 @@ public class DAOTeste {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte68"></a>
+## <a name="parte68">Aula 67: Exceptions pt 01</a>
+
+https://www.youtube.com/watch?v=MO12vFGPbxo
+
+```java
+package com.devdojo.javacore.o.exception.teste;
+
+public class ErrorTeste {
+    public static void main(String[] args) {
+        stackOverflowError();
+    }
+    public static void stackOverflowError(){
+        stackOverflowError();
+    }
+}
+
+```
+
+
 
 
 [Voltar ao Índice](#indice)
