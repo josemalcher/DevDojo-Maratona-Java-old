@@ -14,11 +14,14 @@ public class PolimorfismoTeste {
         //relatorioPagamento.relatorioPagamentoGerente(g);
         //relatorioPagamento.relatorioPagamentoVendedor(v);
         relatorioPagamento.relatorioPagamento(g);
+        System.out.println("------------------------------------");
         relatorioPagamento.relatorioPagamento(v);
 
-        System.out.println("------------------------------------");
 
+
+        /*
         Funcionario f = g;
         System.out.println(f.getSalario());
+        */
     }
 }
