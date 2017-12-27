@@ -4321,13 +4321,172 @@ public class TesteProduto {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte64"></a>
+## <a name="parte64">Aula 63: Interfaces pt 02</a>
+
+![Exempo de Interface - UML](http://www.guj.com.br/uploads/default/original/3X/b/a/bacb72cfedd24026cf09185db59e5c7970e3fda3.jpg_)
 
 
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte65"></a>
+## <a name="parte65">Aula 64: Polimorfismo pt 01</a>
+
+```java
+package com.devdojo.javacore.n.polimorfismo.classes;
+
+public abstract class Funcionario {
+
+    protected String nome;
+    protected double salario;
+
+    public Funcionario(String nome, double salario) {
+        this.nome = nome;
+        this.salario = salario;
+    }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "nome='" + nome + '\'' +
+                ", salario=" + salario +
+                '}';
+    }
+
+    public abstract void calcularPagamento();
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+        }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.n.polimorfismo.classes;
+
+public class Vendedor extends Funcionario{
+
+    private double totalVendas;
+
+    public Vendedor(String nome, double salario, double totalVendas) {
+        super(nome, salario);
+        this.totalVendas = totalVendas;
+    }
+
+    public double getTotalVendas() {
+        return totalVendas;
+    }
+
+    public void setTotalVendas(double totalVendas) {
+        this.totalVendas = totalVendas;
+    }
+
+    @Override
+    public void calcularPagamento() {
+        this.salario = this.salario + (totalVendas * 0.05);
+    }
+}
+```
+
+```java
+package com.devdojo.javacore.n.polimorfismo.classes;
+
+public class Gerente extends Funcionario {
+
+    private double pnl;
+
+
+    public Gerente(String nome, double salario, double pnl) {
+        super(nome, salario);
+        this.pnl = pnl;
+    }
+
+    @Override
+    public void calcularPagamento() {
+        this.salario = this.salario + pnl;
+    }
+
+    public double getPnl() {
+        return pnl;
+    }
+
+    public void setPnl(double pnl) {
+        this.pnl = pnl;
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.n.polimorfismo.classes;
+
+public class RelatorioPagamento {
+/*
+
+    public void relatorioPagamentoGerente(Gerente gerente){
+        System.out.println("Gerando relatorio de pagamento para o Gerente");
+        gerente.calcularPagamento();
+        System.out.println("Nome " + gerente.getNome());
+        System.out.println("Salario do Mes " + gerente.getSalario());
+    }
+    public void relatorioPagamentoVendedor(Vendedor vendedor){
+        System.out.println("Gerando relatorio de pagamento para o vendedores");
+        vendedor.calcularPagamento();
+        System.out.println("Nome " + vendedor.getNome());
+        System.out.println("Salario do Mes " + vendedor.getSalario());
+    }
+*/
+
+    public void relatorioPagamento(Funcionario funcionario){
+        System.out.println("Gerando relatorio de pagamento");
+        funcionario.calcularPagamento();
+        System.out.println("Nome " + funcionario.getNome());
+        System.out.println("Salario do Mes " + funcionario.getSalario());
+    }
+
+}
+
+```
+
+```java
+package com.devdojo.javacore.n.polimorfismo.testes;
+
+import com.devdojo.javacore.n.polimorfismo.classes.Funcionario;
+import com.devdojo.javacore.n.polimorfismo.classes.Gerente;
+import com.devdojo.javacore.n.polimorfismo.classes.RelatorioPagamento;
+import com.devdojo.javacore.n.polimorfismo.classes.Vendedor;
+
+public class PolimorfismoTeste {
+    public static void main(String[] args) {
+        Gerente g = new Gerente("Jose", 5000, 2000);
+        Vendedor v = new Vendedor("Mariazinha", 2000, 20000);
+
+        RelatorioPagamento relatorioPagamento = new RelatorioPagamento();
+        //relatorioPagamento.relatorioPagamentoGerente(g);
+        //relatorioPagamento.relatorioPagamentoVendedor(v);
+        relatorioPagamento.relatorioPagamento(g);
+        relatorioPagamento.relatorioPagamento(v);
+
+        System.out.println("------------------------------------");
+
+        Funcionario f = g;
+        System.out.println(f.getSalario());
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
