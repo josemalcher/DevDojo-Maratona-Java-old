@@ -4746,8 +4746,63 @@ public class RuntimeException {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte71"></a>
+## <a name="parte71">Aula 70: Exceptions: lançamento de exceção pt 04</a>
 
+https://www.youtube.com/watch?v=YzoQMLfY7-c
+
+
+```java
+package com.devdojo.javacore.o.exception.runtimeexception.teste;
+
+public class RuntimeException {
+    public static void main(String[] args) {
+        try{
+            divisao(10,0);
+        }catch (java.lang.RuntimeException e){
+            System.out.println(e.getStackTrace());
+            e.printStackTrace();
+        }
+    }
+
+    public static void divisao(int a, int b){
+        if(b == 0){
+            throw new IllegalArgumentException("Valor precisa ser diferente de ZERO");
+        }
+        int result = a/b;
+        System.out.println(result);
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.o.exception.checkedexception.teste;
+
+import java.io.File;
+import java.io.IOException;
+
+public class CheckedExceptionTest {
+    public static void main(String[] args) {
+        try {
+            criarArquivo();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void criarArquivo() throws IOException{
+        File file = new File("Teste.txt");
+        try {
+            System.out.println("Arquivo Criado? " + file.createNewFile());
+            System.out.println("Arquivo criado com sucesso!!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+
+```
 
 [Voltar ao Índice](#indice)
 
