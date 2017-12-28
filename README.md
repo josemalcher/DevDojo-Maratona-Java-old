@@ -4683,8 +4683,65 @@ public class RuntimeException {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte70"></a>
+## <a name="parte70">Aula 69: Exceptions: Exceções checked pt 03</a>
 
+https://www.youtube.com/watch?v=9xW7o1sIkRE
+
+```java
+package com.devdojo.javacore.o.exception.checkedexception.teste;
+
+import java.io.File;
+import java.io.IOException;
+
+public class CheckedExceptionTest {
+    public static void main(String[] args) {
+        criarArquivo();
+    }
+
+    public static void criarArquivo(){
+        File file = new File("Teste.txt");
+        try {
+            System.out.println("Arquivo Criado? " + file.createNewFile());
+            System.out.println("Arquivo criado com sucesso!!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+
+```
+
+```java
+package com.devdojo.javacore.o.exception.runtimeexception.teste;
+
+public class RuntimeException {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 0;
+
+        if(b != 0){ // "Tratamento"
+            int c = a/b;
+            System.out.println(c);
+        }
+
+
+        Object obj = null;
+        //System.out.println(obj.toString()); //NullPointerException
+
+        try{
+            int[] ar = new int[2];
+            System.out.println(ar[2]); //ArrayIndexOutOfBoundsException
+            System.out.println("Imprimindo depois da possivel excecao");
+        }catch (java.lang.RuntimeException e ){
+            e.printStackTrace();
+        }
+
+
+    }
+}
+
+```
 
 [Voltar ao Índice](#indice)
 

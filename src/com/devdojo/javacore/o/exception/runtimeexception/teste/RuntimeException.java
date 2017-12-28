@@ -12,10 +12,16 @@ public class RuntimeException {
 
 
         Object obj = null;
-        System.out.println(obj.toString()); //NullPointerException
+        //System.out.println(obj.toString()); //NullPointerException
 
-        int[] ar = new int[2];
-        System.out.println(ar[2]); //ArrayIndexOutOfBoundsException
+        try{
+            int[] ar = new int[2];
+            System.out.println(ar[2]); //ArrayIndexOutOfBoundsException
+            System.out.println("Imprimindo depois da possivel excecao");
+        }catch (java.lang.RuntimeException e ){
+            e.printStackTrace();
+        }
+
 
     }
 }
