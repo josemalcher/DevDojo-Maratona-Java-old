@@ -4856,8 +4856,42 @@ public class CheckedExceptionTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte73"></a>
+## <a name="parte73">Aula 72: Tratamento de multiplas exceções pt 06</a>
 
+https://www.youtube.com/watch?v=IL0-EWlytzA&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=73
+
+```java
+package com.devdojo.javacore.o.exception.runtimeexception.teste;
+
+import java.io.FileNotFoundException;
+import java.sql.SQLException;
+
+public class MultiplasRuntimeExceltionTeste {
+    public static void main(String[] args) {
+
+        try {
+            throw new IndexOutOfBoundsException();
+        } catch (IllegalArgumentException | IndexOutOfBoundsException | ArithmeticException e) {
+            System.out.println("dentro do ArrayIndexOutOfBoundsException");
+        }
+        System.out.println("final do programa");
+
+        try {
+            talvezLanceException();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private static void talvezLanceException() throws SQLException, FileNotFoundException {
+
+    }
+}
+
+```
 
 [Voltar ao Índice](#indice)
 
