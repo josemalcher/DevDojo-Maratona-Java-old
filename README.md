@@ -4932,7 +4932,75 @@ public class MultiplasRuntimeExceltionTeste {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte75"></a>
+## <a name="parte75"> Aula 74 : Exceptions: try-with-resources pt 08</a>
+
+https://www.youtube.com/watch?v=Medf33blG4M&index=75&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.o.exception.checkedexception.classes;
+
+public class Leitor1 implements AutoCloseable{
+    @Override
+    public void close() throws Exception {
+        System.out.println("FECHANDO O LEITOR 1");
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.o.exception.checkedexception.classes;
+
+public class Leitor2 implements AutoCloseable {
+
+    @Override
+    public void close() throws Exception {
+        System.out.println("Fechando o LEITOR 2");
+    }
+}
+
+```
+```java
+package com.devdojo.javacore.o.exception.checkedexception.teste;
+
+import com.devdojo.javacore.o.exception.checkedexception.classes.Leitor1;
+import com.devdojo.javacore.o.exception.checkedexception.classes.Leitor2;
+
+import java.io.*;
+
+public class TryWithResourcesTest {
+    public static void main(String[] args) {
+        lerArquivo();
+    }
+
+    public static void lerArquivo() {
+        try (Leitor2 leitor2 = new Leitor2();
+             Leitor1 leitor1 = new Leitor1()) {
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void lerArquivoOld() {
+        Reader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader("text.txt"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
