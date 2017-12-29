@@ -5006,7 +5006,52 @@ public class TryWithResourcesTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte76"></a>
+## <a name="parte76">Aula 75: Exceptions customizadas pt 09</a>
+
+https://www.youtube.com/watch?v=HoXCxdcCN6o&index=76&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.o.exception.customexceptions.classes;
+
+public class LoginInvalidoException extends Exception {
+
+    public LoginInvalidoException() {
+        super("--->>> Usuario ou senha inválidos!! <<<---");
+    }
+
+}
+
+```
+
+```java
+package com.devdojo.javacore.o.exception.customexceptions.teste;
+
+import com.devdojo.javacore.o.exception.customexceptions.classes.LoginInvalidoException;
+
+public class CustomExceptionTest {
+    public static void main(String[] args) {
+        try {
+            logar();
+        } catch (LoginInvalidoException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void logar() throws LoginInvalidoException {
+        String usuarioBancoDeDados = "goku";
+        String senhaBancoDeDados = "111";
+        String usuarioDigitado = "goku";
+        String senhaDigitada = "123";
+        if (!usuarioBancoDeDados.equals(usuarioDigitado) || !senhaBancoDeDados.equals(senhaDigitada)) {
+            throw new LoginInvalidoException();
+        } else {
+            System.out.println("Logado!");
+        }
+    }
+
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
