@@ -1,11 +1,12 @@
 package com.devdojo.javacore.o.exception.runtimeexception.teste;
 
+import java.awt.*;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class MultiplasRuntimeExceltionTeste {
     public static void main(String[] args) {
-
         try {
             throw new IndexOutOfBoundsException();
         } catch (IllegalArgumentException | IndexOutOfBoundsException | ArithmeticException e) {
@@ -15,15 +16,12 @@ public class MultiplasRuntimeExceltionTeste {
 
         try {
             talvezLanceException();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        } catch (Exception e) {
 
+        }
     }
 
-    private static void talvezLanceException() throws SQLException, FileNotFoundException {
+    private static void talvezLanceException() throws SQLException, AWTException, IOException {
 
     }
 }
