@@ -5172,13 +5172,230 @@ public class AssertTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte79"></a>
+## <a name="parte79">Aula 78: Classes Wrapper pt 01</a>
+
+https://www.youtube.com/watch?v=MBm7iyYt6NQ&index=79&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.r.wrappers;
+
+public class WrappersTest {
+    public static void main(String[] args) {
+        byte bytePrimitivo = 1;
+        short shortPrimitivo = 1;
+        int intPrimitivo = 10;
+        long longPrimitivo = 10;
+        float floatPrimitivo = 10;
+        double doublePrimitivo = 10F;
+        char charPrimitivo = 'A';
+        boolean booleanPrimitivo = true;
+
+        Byte byteWrapper = 1;
+        Short shortWrapper = 1;
+        Integer integerWrapper = 1;
+        Long longWrapper = 1L;
+        Float floatWrapper = 10f;
+        Double doubleWrapper = 10D;
+        Character characterWrapper = 'A';
+        Boolean booleanWrapper = true;
+
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
 
 ---
 ## <a name="parte80"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte81"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte82"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte83"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte84"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte85"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte86"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte87"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte88"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte89"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte90"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte91"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte92"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte93"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte94"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte95"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte96"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte97"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte98"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte99"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte100"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte101"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte102"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte103"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte104"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte105"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte106"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte107"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte108"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte109"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+## <a name="parte110"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte111"></a>
 
 
 [Voltar ao Índice](#indice)
