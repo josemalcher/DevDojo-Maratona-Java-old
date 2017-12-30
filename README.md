@@ -5256,13 +5256,41 @@ public class WrappersTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte81"></a>
+## <a name="parte81">Aula 80: String pt 01</a>
+
+https://www.youtube.com/watch?v=n0B_KA3DHHg&index=81&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.s.string;
+
+public class StringTest {
+    public static void main(String[] args) {
+        String nome = "Jose";
+        nome = nome.concat(" Malcher"); // nome += " Suane";
+        String nome2 = "William";
+        String nome3 = new String("Catarina");
+        // 1 - variavel de referencia,
+        // 2 - um objeto do tipo string,
+        // 3 - Uma string no pool de String
+
+        System.out.println(nome3);
+
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte82"></a>
+## <a name="parte82">Aula 81: String pt 02</a>
+
+https://www.youtube.com/watch?v=2gcrpIZVKpk&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=82
+
+```java
+
+```
 
 
 [Voltar ao Índice](#indice)
