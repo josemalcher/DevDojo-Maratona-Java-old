@@ -5057,8 +5057,64 @@ public class CustomExceptionTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte77"></a>
+## <a name="parte77">Aula 76: Exceptions e regras para sobrescrita pt 10</a>
 
+https://www.youtube.com/watch?v=CxTXrKWXzo4&index=77&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.o.exception.sobrescrita.classes;
+
+import com.devdojo.javacore.o.exception.customexceptions.classes.LoginInvalidoException;
+
+import java.io.FileNotFoundException;
+
+public class Pessoa {
+    public void salvar() throws LoginInvalidoException, FileNotFoundException{
+
+    }
+}
+
+```
+```java
+
+package com.devdojo.javacore.o.exception.sobrescrita.classes;
+
+import java.io.FileNotFoundException;
+
+public class Funcionario extends Pessoa{
+
+    public void salvar() throws FileNotFoundException{
+
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.o.exception.sobrescrita.teste;
+
+import com.devdojo.javacore.o.exception.customexceptions.classes.LoginInvalidoException;
+import com.devdojo.javacore.o.exception.sobrescrita.classes.Funcionario;
+import com.devdojo.javacore.o.exception.sobrescrita.classes.Pessoa;
+
+import java.io.FileNotFoundException;
+
+public class SObrescritaComExceptionTeste {
+    public static void main(String[] args) {
+        Funcionario f = new Funcionario();
+        Pessoa p = new Pessoa();
+
+        try {
+            p.salvar();
+        } catch (LoginInvalidoException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+```
 
 [Voltar ao Índice](#indice)
 
