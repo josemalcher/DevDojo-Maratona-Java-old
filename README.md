@@ -5381,7 +5381,27 @@ Tempo gasto StringBuffer 7 ms
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte84"></a>
+## <a name="parte84">Aula 83: StringBuilder and StringBuffer</a>
+
+https://www.youtube.com/watch?v=QY92U86m77s&index=84&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.s.string;
+
+public class StringBuilderTest {
+    public static void main(String[] args) {
+        String s = "Uma frase comum...";
+        StringBuffer sb = new StringBuffer(16);
+//        sb.append("Uma Frase comum 2 - ");
+//        sb.append(" teste");
+//        System.out.println(sb.reverse());
+        sb.append("0123456789");
+        //System.out.println(sb.delete(0,2));
+        System.out.println(sb.insert(2, "###"));
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
