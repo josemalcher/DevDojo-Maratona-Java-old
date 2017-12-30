@@ -5321,7 +5321,61 @@ public class StringTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte83"></a>
+## <a name="parte83">Aula 82: Performance das Strings</a>
+
+https://www.youtube.com/watch?v=3ctBVJQaMWM&index=83&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.s.string;
+
+public class StringPerformanceTest {
+    public static void main(String[] args) {
+        long inicio = System.currentTimeMillis();
+        concatString(100000);
+        long fim = System.currentTimeMillis();
+        System.out.println("Tempo gasto String " + (fim - inicio) + " ms");
+
+        inicio = System.currentTimeMillis();
+        concatStringBuilder(100000);
+        fim = System.currentTimeMillis();
+        System.out.println("Tempo gasto StringBuilder " + (fim - inicio) + " ms");
+
+        inicio = System.currentTimeMillis();
+        concatStringBuffer(100000);
+        fim = System.currentTimeMillis();
+        System.out.println("Tempo gasto StringBuffer " + (fim - inicio) + " ms");
+    }
+
+    private static void concatString(int tam) {
+        String string = "";
+        for (int i = 0; i < tam; i++) {
+            string += i;
+        }
+    }
+
+    private static void concatStringBuilder(int tam) {
+        StringBuilder sb = new StringBuilder(tam);
+        for (int i = 0; i < tam; i++) {
+            sb.append(i);
+        }
+    }
+
+    private static void concatStringBuffer(int tam) {
+        StringBuffer sb = new StringBuffer(tam);
+        for (int i = 0; i < tam; i++) {
+            sb.append(i);
+        }
+    }
+}
+
+```
+
+```
+"C:\Program Files\Java\jdk1.8.0_144\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\lib\idea_rt.jar=62606:C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_144\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\rt.jar;C:\Users\josemalcher\Documents\09-Workspaces\workspace-DEVDOJO-Maratona-JAVA\out\production\workspace-DEVDOJO-Maratona-JAVA" com.devdojo.javacore.s.string.StringPerformanceTest
+Tempo gasto String 33076 ms
+Tempo gasto StringBuilder 5 ms
+Tempo gasto StringBuffer 7 ms
+```
 
 
 [Voltar ao Índice](#indice)
