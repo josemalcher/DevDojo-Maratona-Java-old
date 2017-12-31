@@ -20,6 +20,7 @@ public class ExpressoesRegularesTest {
         // |
         // $
         // . coringa 1.3 = 123,133,1A3,1#3, 1 3
+        // ^ [^abc]
 
         int hex = 0x1;
 
@@ -27,10 +28,14 @@ public class ExpressoesRegularesTest {
         //String texto = "12 0x 0X 0x01FFABC 0x10G 0x1";
         //String regex = "([a-zA-Z0-9\\._-])+@([a-zA-Z])+(\\.([a-zA-Z])+)+"; //([\\w\\.])+@([a-zA-Z])+(\.([a-zA-Z])+)+
         //String texto = "fulano@hotmail.com, 102Abc@gmail.com, #@!abrao@mail.br, teste@gmail.com.br, teste@mail";
-        String regex = "\\d{2}/\\d{2}/\\d{2,4}";
-        String texto = "05/10/2010 05/05/2015 1/1/01 01/05/95"; // dd/MM/yyyy
+        //String regex = "\\d{2}/\\d{2}/\\d{2,4}";
+        //String texto = "05/10/2010 05/05/2015 1/1/01 01/05/95"; // dd/MM/yyyy
 
-//        System.out.println("Email valido? "+ "#@!abrao@mail.br".matches(regex));
+        String regex = "proj([^,])*";
+        String texto = "proj1.bkp, proj1.java, proj1.class, proj1final.java, proj2.bkp, proj3.java, diagrama, texto, foto"; // dd/MM/yyyy
+
+        //System.out.println("Email valido? "+ "#@!abrao@mail.br".matches(regex));
+
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(texto);
         System.out.println("texto:  "+texto);
