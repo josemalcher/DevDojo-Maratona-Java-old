@@ -6210,7 +6210,40 @@ public class FileDiretorioTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte103"></a>
+## <a name="parte103">Aula 102: IO pt 05 Classe Console</a>
+
+https://www.youtube.com/watch?v=URfifIDhQ_k&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=103
+
+```java
+package com.devdojo.javacore.w.io;
+
+import java.io.Console;
+
+public class ConsoleTest {
+    public static void main(String[] args) {
+        /*
+            Executar no terminarl
+         */
+        Console c = System.console();
+        char[] pw = c.readPassword("%s", "pw: ");
+        for(char pass : pw){
+            c.format("%c ", pass);
+        }
+        c.format("\n");
+        String texto;
+        while(true){
+            texto = c.readLine("%s","Digite: ");
+            c.format("esse texto %s foi digitado", retorno(texto));
+        }
+    }
+
+    public static String retorno(String arg1){
+        return arg1;
+    }
+}
+
+```
+
 
 
 [Voltar ao Índice](#indice)
