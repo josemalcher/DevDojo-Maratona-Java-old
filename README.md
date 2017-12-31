@@ -5936,7 +5936,61 @@ public class ScannerTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte97"></a>
+## <a name="parte97"> Aula 96: Resource Bundles pt 01</a>
+
+https://www.youtube.com/watch?v=sQeG5rgwGIQ&index=97&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+messages.properties
+```
+show = show
+```
+messages_pt_BR.properties
+```
+# messages
+! comentário
+hello = Olá
+good.morning = Bom Dia
+show = SHOWWWW!!
+```
+messagens_en_US.properties
+```
+# messages
+! comentário
+hello = hello
+good.morning = Good Morning
+
+```
+
+```java
+package com.devdojo.javacore.v.resourcebundle;
+
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+public class ResourceBundleTest {
+    public static void main(String[] args) {
+        System.out.println(Locale.getDefault());
+        ResourceBundle rb = ResourceBundle.getBundle("messages", new Locale("en","US"));
+        System.out.println(rb.getString("hello"));
+        System.out.println(rb.getString("good.morning"));
+        System.out.println(rb.getString("show"));
+        rb = ResourceBundle.getBundle("messages", new Locale("pt","BR"));
+        System.out.println(rb.getString("hello"));
+        System.out.println(rb.getString("good.morning"));
+        System.out.println(rb.getString("show"));
+        
+        //Locale locale = new Locale("fr","CA");
+        //ResourceBundle.getBundle("messages",locale);
+
+        //messages_fr_CA.properties
+        //messages_fr.properties
+        //messages_en_US.properties
+        //messages_en.properties
+        //messages.properties
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
