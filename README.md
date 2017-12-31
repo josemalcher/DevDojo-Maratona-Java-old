@@ -6367,7 +6367,37 @@ public class NormalizacaoTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte107"></a>
+## <a name="parte107">Aula 106: NIO pt 04 Resolvendo paths</a>
+
+https://www.youtube.com/watch?v=f0sAcBBdkoA&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=107
+
+```java
+package com.devdojo.javacore.x.nio;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class ResolvendoPaths {
+    public static void main(String[] args) {
+        Path dir = Paths.get("home\\jose");
+        Path arquivo = Paths.get("dev\\arquivo.txt");
+        Path result = dir.resolve(arquivo);
+        System.out.println(result);
+
+        Path absoluto = Paths.get("/home/jose");
+        Path relativo = Paths.get("dev");
+        Path file = Paths.get("file.txt");
+
+        System.out.println("1: "+absoluto.resolve(relativo));
+        System.out.println("2: "+absoluto.resolve(file));
+        System.out.println("3: "+relativo.resolve(file));
+        System.out.println("4: "+relativo.resolve(absoluto));
+        System.out.println("5: "+file.resolve(absoluto));
+        System.out.println("6: "+file.resolve(relativo));
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
