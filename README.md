@@ -5574,7 +5574,28 @@ public class NumberFormatTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte89"></a>
+## <a name="parte89">Aula 88: Datas personalizadas com SimpleDateFormat</a>
+
+https://www.youtube.com/watch?v=ruc10Zv4F24&index=89&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.t.datas;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+public class SimpleDateFormatTest {
+    public static void main(String[] args) {
+
+        Calendar c = Calendar.getInstance();
+        String mascara = "'Atlanta,' dd 'de' MMMM 'de' yyyy";
+        SimpleDateFormat formatador = new SimpleDateFormat(mascara);
+        System.out.println(formatador.format(c.getTime()));
+
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
