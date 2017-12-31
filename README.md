@@ -6249,8 +6249,28 @@ public class ConsoleTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte104"></a>
+## <a name="parte104">Aula 103: NIO pt 01 Introdução as novas classes Path, Paths, Files</a>
 
+https://www.youtube.com/watch?v=RX3kPWkuZMQ&index=104&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.x.nio;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class CriandoPathTest {
+    public static void main(String[] args) {
+        // C:\Users\GCUIT\Google Drive\GCU\JavaOnline
+        Path p1 = Paths.get("C:\\Users\\GCUIT\\Google Drive\\GCU\\JavaOnline\\Arquivo.txt");
+        Path p2 = Paths.get("C:\\Users\\GCUIT\\Google Drive\\GCU\\JavaOnline", "Arquivo.txt");
+        Path p3 = Paths.get("C:", "Users\\GCUIT\\Google Drive\\GCU\\JavaOnline", "Arquivo.txt");
+        Path p4 = Paths.get("C:", "Users", "GCUIT", "Google Drive", "GCU", "JavaOnline", "Arquivo.txt");
+
+    }
+}
+
+```
 
 [Voltar ao Índice](#indice)
 
