@@ -5524,7 +5524,51 @@ public class LocaleTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte88"></a>
+## <a name="parte88">Aula 87: Formatação de números e moeda com NumberFormat</a>
+
+https://www.youtube.com/watch?v=xACEG97W8p0&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=88
+
+```java
+package com.devdojo.javacore.t.datas;
+
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
+
+public class NumberFormatTest {
+    public static void main(String[] args) {
+        float valor = 212.4567f;
+        Locale locJP = new Locale("jp");
+        Locale locFR = new Locale("fr");
+        Locale locIT = new Locale("it");
+
+        NumberFormat[] nfa = new NumberFormat[4];
+        nfa[0] = NumberFormat.getInstance();
+        nfa[1] = NumberFormat.getInstance(locIT);
+        nfa[2] = NumberFormat.getCurrencyInstance();
+        nfa[3] = NumberFormat.getCurrencyInstance(locIT);
+
+        for (NumberFormat nf : nfa) {
+            System.out.println(nf.format(valor));
+        }
+
+        NumberFormat nf = NumberFormat.getInstance();
+        System.out.println(nf.getMaximumFractionDigits());
+        nf.setMaximumFractionDigits(1);
+        System.out.println(nf.format(valor));
+        String valorString = "212.4567";
+
+        try {
+            System.out.println(nf.parse(valorString));
+            nf.setParseIntegerOnly(true);
+            System.out.println(nf.parse(valorString));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
