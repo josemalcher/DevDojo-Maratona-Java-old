@@ -5717,7 +5717,51 @@ public class ExpressoesRegularesTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte93"></a>
+## <a name="parte93">Aula 92: Expressões regulares pt 04</a>
+
+https://www.youtube.com/watch?v=z2Immdl1-5Q&index=93&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.u.expressoesregulares;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class ExpressoesRegularesTest {
+    public static void main(String[] args) {
+        // \d - todos os digitos
+        // \D tudo o que não for digito
+        // \s espaços em branco \t \n \f \r
+        // \S caractere que não é branco
+        // \w caracteres de palavras a-z A-Z, digitos e _
+        // \W tudo o que não for caractere de palavra
+        // []
+        // ? zero ou uma
+        // * zero ou mais
+        // + uma ou mais
+        // {n,m} de n ate m
+        // ( )
+        // |
+        // $
+
+        int hex = 0x1;
+
+        String regex = "0[xX]([0-9a-fA-F])+(\\s|$)";
+        String texto = "12 0x 0X 0x01FFABC 0x10G 0x1";
+
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(texto);
+        System.out.println("texto:  " + texto);
+        System.out.println("indice: 012345678901234567");
+        System.out.println("expressao: " + matcher.pattern());
+        System.out.println("posicoes encontradas");
+        while (matcher.find()) {
+            System.out.println(matcher.start() + " " + matcher.group());
+        }
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
