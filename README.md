@@ -6163,7 +6163,48 @@ public class BufferedTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte102"></a>
+## <a name="parte102">Aula 101: IO pt 04 Classe File para diretórios</a>
+
+https://www.youtube.com/watch?v=2rLO4JGwnOI&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=102
+
+```java
+package com.devdojo.javacore.w.io;
+
+import java.io.File;
+import java.io.IOException;
+
+public class FileDiretorioTest {
+    public static void main(String[] args) throws IOException {
+       /*
+       File diretorio = new File("folder");
+        boolean mkdir = diretorio.mkdir();
+        System.out.println("Diretorio Criado " + mkdir);
+
+        File arquivo = new File(diretorio,"arquivo.txt");
+        boolean newFile = arquivo.createNewFile();
+        System.out.println("Arquivo criado " + newFile);
+
+        File arquivoNovoNome = new File(diretorio,"arquivo_renomeado.txt");
+        boolean renamed = arquivo.renameTo(arquivoNovoNome);
+        System.out.println("Renomeado "+renamed);
+
+        File diretorioRenomeado = new File("folder2");
+        boolean diretorioRenamed = diretorio.renameTo(diretorioRenomeado);
+        System.out.println("diretorio renomeado: "+diretorioRenamed);
+        */
+        buscarArquivos();
+    }
+
+    public static void buscarArquivos() {
+        File file = new File("folder2");
+        String[] list = file.list();
+        for (String arquivo : list) {
+            System.out.println(arquivo);
+        }
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
