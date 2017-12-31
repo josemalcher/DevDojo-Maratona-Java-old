@@ -5634,7 +5634,41 @@ public class ExpressoesRegularesTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte91"></a>
+## <a name="parte91">Aula 90: Expressões regulares pt 02</a>
+
+https://www.youtube.com/watch?v=rY6sA1vdSPA&index=91&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.u.expressoesregulares;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class ExpressoesRegularesTest {
+    public static void main(String[] args) {
+        // \d - todos os digitos
+        // \D tudo o que não for digito
+        // \s espaços em branco \t \n \f \r
+        // \S caractere que não é branco
+        // \w caracteres de palavras a-z A-Z, digitos e _
+        // \W tudo o que não for caractere de palavra
+
+        String regex = "\\W";
+        String texto = "#@hab1278 \t_";
+
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(texto);
+        System.out.println("texto:  " + texto);
+        System.out.println("indice: 012345678901234567");
+        System.out.println("expressao: " + matcher.pattern());
+        System.out.println("posicoes encontradas");
+        while (matcher.find()) {
+            System.out.print(matcher.start() + " ");
+        }
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
