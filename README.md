@@ -5996,7 +5996,13 @@ public class ResourceBundleTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte98"></a>
+## <a name="parte98">Aula 97: Resource Bundles pt 02</a>
+
+https://www.youtube.com/watch?v=OmeH6N4HI8U&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=98
+
+```java
+
+```
 
 
 [Voltar ao Índice](#indice)
