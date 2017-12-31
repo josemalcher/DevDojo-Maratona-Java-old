@@ -5885,8 +5885,53 @@ public class ExpressoesRegularesTest {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte96"></a>
+## <a name="parte96">Aula 95: Tokens e Delimitadores com String e Scanner</a>
 
+https://www.youtube.com/watch?v=mbD6S4dHObw&index=96&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.u.expressoesregulares;
+
+public class TokenTest {
+    public static void main(String[] args) {
+        String str = "José Malcher4 William9 Paulo1 Joana2 Camila3 Anna4 John5 Matheus";
+        String[] tokens = str.split("\\d"); // delimitador / regex
+        for (String arr : tokens) {
+            System.out.println(arr.trim());
+        }
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.u.expressoesregulares;
+
+import java.util.Scanner;
+
+public class ScannerTest {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner("1 true 100 oi");
+        while (scanner.hasNext()) {
+            System.out.println(scanner.next());
+        }
+        System.out.println("##########################");
+        Scanner scanner2 = new Scanner("1 true 100 oi");
+        while (scanner2.hasNext()) {
+            if (scanner2.hasNextInt()) {
+                int i = scanner2.nextInt();
+                System.out.println("int " + i);
+            } else if (scanner2.hasNextBoolean()) {
+                boolean b = scanner2.nextBoolean();
+                System.out.println(b);
+            } else {
+                System.out.println(scanner2.next());
+            }
+        }
+    }
+}
+
+```
 
 [Voltar ao Índice](#indice)
 
