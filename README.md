@@ -6403,7 +6403,41 @@ public class ResolvendoPaths {
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte108"></a>
+## <a name="parte108"> Aula 107: NIO pt 05 Relativizando paths</a>
+
+https://www.youtube.com/watch?v=UkPKm3Hdi1A&index=108&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+package com.devdojo.javacore.x.nio;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class RelativizarTest {
+    public static void main(String[] args) {
+        Path dir = Paths.get("/home/jose");
+        Path classe = Paths.get("/home/jose/java/Pessoa.java");
+        Path pathToClasse = dir.relativize(classe);
+        System.out.println(pathToClasse);
+
+        Path absoluto1 = Paths.get("/home/jose");
+        Path absoluto2 = Paths.get("/usr/local");
+        Path absoluto3 = Paths.get("/home/jose/java/Pessoa.java");
+        Path relativo1 = Paths.get("temp");
+        Path relativo2 = Paths.get("temp/Funcionario.java");
+        System.out.println("1: "+absoluto1.relativize(absoluto3));
+        System.out.println("2: "+absoluto3.relativize(absoluto1));
+        System.out.println("3: "+absoluto1.relativize(absoluto2));
+        System.out.println("4: "+relativo1.relativize(relativo2));
+        //System.out.println("5: "+absoluto1.relativize(relativo1));
+        /*
+        Exception in thread "main" java.lang.IllegalArgumentException: 'other' is different type of Path
+	    at sun.nio.fs.WindowsPath.relativize(WindowsPath.java:388)
+	    at sun.nio.fs.WindowsPath.relativize(WindowsPath.java:44)
+	    at com.devdojo.javacore.x.nio.RelativizarTest.main(RelativizarTest.java:22)
+         */
+    }
+}
+
 
 
 [Voltar ao Índice](#indice)
@@ -6423,6 +6457,279 @@ public class ResolvendoPaths {
 ---
 
 ## <a name="parte111"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte112"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte113"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte114"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte115"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte116"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte117"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte118"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte119"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte120"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte121"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte122"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte123"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte124"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte125"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte126"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte127"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte128"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte129"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte130"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte131"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte132"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte133"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte134"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte135"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte136"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte137"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte138"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte139"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte140"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte141"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte142"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte143"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte144"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte145"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte146"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte147"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte148"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte149"></a>
+
+
+[Voltar ao Índice](#indice)
+
+---
+
+## <a name="parte150"></a>
 
 
 [Voltar ao Índice](#indice)
