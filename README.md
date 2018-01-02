@@ -6450,6 +6450,92 @@ public class RelativizarTest {
 
 https://www.youtube.com/watch?v=ydmOXDRSTBU&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=109
 
+```java
+package com.devdojo.javacore.x.nio;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributeView;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.nio.file.attribute.FileTime;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+public class AtributosBasicosTest {
+    public static void main(String[] args) throws IOException {
+
+        Date primeiroDeDezemebro = new GregorianCalendar(2015, Calendar.DECEMBER, 1).getTime();
+        File file = new File("folder2\\arquivo.txt");
+        file.createNewFile();
+        file.setLastModified(primeiroDeDezemebro.getTime());
+        System.out.println(file.lastModified());
+        file.delete();
+
+        Path path = Paths.get("folder2\\arquivo_path.txt");
+        Files.createFile(path);
+        FileTime fileTime = FileTime.fromMillis(primeiroDeDezemebro.getTime());
+        Files.setLastModifiedTime(path, fileTime);
+        System.out.println(Files.getLastModifiedTime(path));
+        Files.deleteIfExists(path);
+
+        path = Paths.get("C:\\Users\\josemalcher\\Documents\\09-Workspaces\\workspace-DEVDOJO-Maratona-JAVA\\src\\com\\devdojo\\javacore\\a\\introducaoclasses\\classes\\Carro.java");
+        System.out.println(Files.isReadable(path));
+        System.out.println(Files.isWritable(path));
+        System.out.println(Files.isExecutable(path));
+
+        // BasicFileAttributes, PosixFileAttributes, DosFileAttributes
+        BasicFileAttributes atributosBasicos = Files.readAttributes(path, BasicFileAttributes.class); //leitura visualizações
+        System.out.println("create " + atributosBasicos.creationTime());
+        System.out.println("lastAccess " + atributosBasicos.lastAccessTime());
+        System.out.println("LastModified " + atributosBasicos.lastModifiedTime());
+        System.out.println("-------------------------------");
+        System.out.println(atributosBasicos.isDirectory());
+        System.out.println(atributosBasicos.isSymbolicLink());
+        System.out.println(atributosBasicos.isRegularFile());
+        System.out.println("-------------------------------");
+
+        // BasicFileAttributeView, PosixFileAttributeView, DosFileAttributeView, FileOwnerAttributeView, AclFileAttributeView
+        FileTime lastModified = atributosBasicos.lastModifiedTime();
+        FileTime created = atributosBasicos.creationTime();
+        FileTime lastAcess = FileTime.fromMillis(System.currentTimeMillis());
+        BasicFileAttributeView basicView = Files.getFileAttributeView(path, BasicFileAttributeView.class); //Alterações
+        basicView.setTimes(lastModified, lastAcess, created);
+        atributosBasicos = Files.readAttributes(path, BasicFileAttributes.class);
+        System.out.println("create " + atributosBasicos.creationTime());
+        System.out.println("lastAccess " + atributosBasicos.lastAccessTime());
+        System.out.println("LastModified " + atributosBasicos.lastModifiedTime());
+
+
+    }
+}
+
+```
+
+```
+"C:\Program Files\Java\jdk1.8.0_144\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\lib\idea_rt.jar=54615:C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_144\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\rt.jar;C:\Users\josemalcher\Documents\09-Workspaces\workspace-DEVDOJO-Maratona-JAVA\out\production\workspace-DEVDOJO-Maratona-JAVA" com.devdojo.javacore.x.nio.AtributosBasicosTest
+1448938800000
+2015-12-01T03:00:00Z
+true
+true
+true
+create 2017-10-15T02:38:07.396696Z
+lastAccess 2018-01-02T22:22:26.639Z
+LastModified 2017-10-15T02:38:18.333822Z
+-------------------------------
+false
+false
+true
+create 2017-10-15T02:38:07.396696Z
+lastAccess 2018-01-02T22:23:55.311Z
+LastModified 2017-10-15T02:38:18.333822Z
+
+Process finished with exit code 0
+
+```
 
 [Voltar ao Índice](#indice)
 
