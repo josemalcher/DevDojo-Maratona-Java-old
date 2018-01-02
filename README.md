@@ -6407,6 +6407,8 @@ public class ResolvendoPaths {
 
 https://www.youtube.com/watch?v=UkPKm3Hdi1A&index=108&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
 
+```java
+
 package com.devdojo.javacore.x.nio;
 
 import java.nio.file.Path;
@@ -6439,11 +6441,14 @@ public class RelativizarTest {
 }
 
 
+```
 
 [Voltar ao Índice](#indice)
 
 ---
-## <a name="parte109"></a>
+## <a name="parte109">Aula 108: NIO pt 06 BasicFileAttributes e BasicFileAttributeView</a>
+
+https://www.youtube.com/watch?v=ydmOXDRSTBU&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=109
 
 
 [Voltar ao Índice](#indice)
