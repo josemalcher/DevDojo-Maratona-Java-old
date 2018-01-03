@@ -6628,7 +6628,111 @@ public class PosixFileAttributesTest {
 
 ---
 
-## <a name="parte112"></a>
+## <a name="parte112"> Aula 111: NIO pt 09 DirectoryStream e SimpleFileVisitor</a>
+
+https://www.youtube.com/watch?v=FDFPtMpe1qo&index=112&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.x.nio;
+
+import java.io.IOException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class DirectoryStreamTest {
+    public static void main(String[] args) {
+        Path dir = Paths.get("pasta/subpasta/subsubpasta");
+        try(DirectoryStream<Path> stream = Files.newDirectoryStream(dir)) {
+            for(Path path : stream){
+                System.out.println(path.getFileName());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+```
+```
+
+"C:\Program Files\Java\jdk1.8.0_144\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\lib\idea_rt.jar=59508:C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_144\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\rt.jar;C:\Users\josemalcher\Documents\09-Workspaces\workspace-DEVDOJO-Maratona-JAVA\out\production\workspace-DEVDOJO-Maratona-JAVA" com.devdojo.javacore.x.nio.DirectoryStreamTest
+file.bkp
+file2.bkp
+file2.txt
+teste.txt
+
+Process finished with exit code 0
+```
+
+```java
+package com.devdojo.javacore.x.nio;
+
+
+import java.io.IOException;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
+
+class AcharTodosOsBkp extends SimpleFileVisitor<Path> {
+    @Override
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
+        if (file.getFileName().toString().endsWith(".bkp")) {
+            System.out.println(file.getFileName());
+        }
+        return FileVisitResult.CONTINUE;
+    }
+}
+
+
+public class FileVisitorTest {
+    public static void main(String[] args) throws IOException {
+        Files.walkFileTree(Paths.get("pasta/subpasta"), new PrintDirs());
+    }
+}
+
+
+class PrintDirs extends SimpleFileVisitor<Path> {
+    public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) {
+        System.out.println("pre: " + dir);
+//        if(dir.getFileName().toString().equals("subsubpasta")){
+//            return FileVisitResult.SKIP_SIBLINGS;
+//        }
+        return FileVisitResult.CONTINUE;
+    }
+
+    @Override
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
+        System.out.println("file " + file.getFileName());
+        return FileVisitResult.CONTINUE;
+    }
+
+    @Override
+    public FileVisitResult visitFileFailed(Path file, IOException exc)
+            throws IOException {
+        return FileVisitResult.CONTINUE;
+    }
+
+    public FileVisitResult postVisitDirectory(Path dir, IOException exc) {
+        System.out.println("post: " + dir);
+        return FileVisitResult.CONTINUE;
+    }
+}
+```
+```
+"C:\Program Files\Java\jdk1.8.0_144\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\lib\idea_rt.jar=59726:C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_144\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\rt.jar;C:\Users\josemalcher\Documents\09-Workspaces\workspace-DEVDOJO-Maratona-JAVA\out\production\workspace-DEVDOJO-Maratona-JAVA" com.devdojo.javacore.x.nio.FileVisitorTest
+pre: pasta\subpasta
+file outroarquivo.txt
+pre: pasta\subpasta\subsubpasta
+file file.bkp
+file file2.bkp
+file file2.txt
+file teste.txt
+post: pasta\subpasta\subsubpasta
+post: pasta\subpasta
+
+Process finished with exit code 0
+```
 
 
 [Voltar ao Índice](#indice)
