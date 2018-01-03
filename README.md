@@ -6588,7 +6588,40 @@ public class DosFileAttributesTest {
 
 ---
 
-## <a name="parte111"></a>
+## <a name="parte111">Aula 110: NIO pt 08 PosixFileAttributes e PosixFileAttributeView</a>
+
+https://www.youtube.com/watch?v=35_-UodFIwk&index=111&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+```java
+package com.devdojo.javacore.x.nio;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.PosixFileAttributes;
+import java.nio.file.attribute.PosixFilePermission;
+import java.nio.file.attribute.PosixFilePermissions;
+import java.util.Set;
+
+public class PosixFileAttributesTest {
+    public static void main(String[] args) throws IOException {
+
+        // roda no linux
+
+        Path path = Paths.get("/home/william/dev/arquivo");
+        PosixFileAttributes posix = Files.readAttributes(path, PosixFileAttributes.class);
+        System.out.println(posix.permissions());
+
+        System.out.println("Alterando as permissoes");
+        Set<PosixFilePermission> permissions = PosixFilePermissions.fromString("rw-rw-rw-");
+        Files.setPosixFilePermissions(path,permissions);
+        posix = Files.readAttributes(path, PosixFileAttributes.class);
+        System.out.println(posix.permissions());
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
