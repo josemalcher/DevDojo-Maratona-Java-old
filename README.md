@@ -6738,7 +6738,197 @@ Process finished with exit code 0
 
 ---
 
-## <a name="parte113"></a>
+## <a name="parte113">Aula 112: NIO pt 10 PathMacther</a>
+
+https://www.youtube.com/watch?v=0lBmlr8KdF0&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=113
+
+```java
+package com.devdojo.javacore.x.nio;
+
+
+import java.io.IOException;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
+
+class FindAllTest extends SimpleFileVisitor<Path> {
+    private PathMatcher matcher = FileSystems.getDefault().getPathMatcher("glob:**/*{Test*}.{java,class}");
+
+    @Override
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+        if (matcher.matches(file)) {
+            System.out.println(file.getFileName());
+        }
+        return FileVisitResult.CONTINUE;
+    }
+}
+
+public class PathMatcherTest {
+    public static void main(String[] args) throws IOException {
+        Path path1 = Paths.get("pasta/subpasta/subsubpasta/file.bkp");
+        Path path2 = Paths.get("file.bkp");
+        Path path3 = Paths.get("william");
+        PathMatcher matcher = FileSystems.getDefault().getPathMatcher("glob:*.bkp");
+        System.out.println(matcher.matches(path1));
+        System.out.println(matcher.matches(path2));
+
+        System.out.println("-------------------");
+        matches(path1, "glob:*.bkp");
+        matches(path1, "glob:**/*.bkp");
+        matches(path1, "glob:*");
+        matches(path1, "glob:**");
+        System.out.println("-------------------");
+        matches(path1, "glob:*.???");
+        matches(path1, "glob:**/*.???");
+        matches(path1, "glob:**.???");
+        System.out.println("-------------------");
+        matches(path3, "glob:{william*,suane*}");
+        matches(path3, "glob:{william,suane}*");
+        matches(path3, "glob:{william,suane}");
+
+        Files.walkFileTree(Paths.get("./"), new FindAllTest());
+    }
+
+    private static void matches(Path path, String glob) {
+        PathMatcher matcher = FileSystems.getDefault().getPathMatcher(glob);
+        System.out.println(glob + ": " + matcher.matches(path));
+
+    }
+}
+
+```
+
+```
+"C:\Program Files\Java\jdk1.8.0_144\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\lib\idea_rt.jar=59689:C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_144\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_144\jre\lib\rt.jar;C:\Users\josemalcher\Documents\09-Workspaces\workspace-DEVDOJO-Maratona-JAVA\out\production\workspace-DEVDOJO-Maratona-JAVA" com.devdojo.javacore.x.nio.PathMatcherTest
+false
+true
+-------------------
+glob:*.bkp: false
+glob:**/*.bkp: true
+glob:*: false
+glob:**: true
+-------------------
+glob:*.???: false
+glob:**/*.???: true
+glob:**.???: true
+-------------------
+glob:{william*,suane*}: true
+glob:{william,suane}*: true
+glob:{william,suane}: true
+CarroTest.class
+EstudanteTest.class
+ProfessorTest.class
+CalculadoraTest.class
+EstudanteTest.class
+ParametrosTest.class
+ProfessorTest.class
+FuncionarioTest.class
+EstudanteTest.class
+ClienteTeste.class
+CarroTest.class
+ClientTeste.class
+AssociacaoTest.class
+HerancaTeste.class
+PessoaTeste.class
+CarroTeste.class
+ClienteTeste.class
+FuncionarioTeste.class
+TesteProduto.class
+DAOTeste.class
+PolimorfismoTeste.class
+CheckedExceptionTest.class
+TryWithResourcesTest.class
+CustomExceptionTest.class
+ErrorTeste.class
+MultiplasRuntimeExceltionTeste.class
+SObrescritaComExceptionTeste.class
+AssertTest.class
+WrappersTest.class
+StringBuilderTest.class
+StringPerformanceTest.class
+StringTest.class
+DateFormatTest.class
+LocaleTest.class
+ManipulacaoDeDatasTest.class
+NumberFormatTest.class
+SimpleDateFormatTest.class
+ExpressoesRegularesTest.class
+ScannerTest.class
+TokenTest.class
+ResourceBundleTest.class
+BufferedTest.class
+ConsoleTest.class
+FileDiretorioTest.class
+FileTest.class
+FileWriterReaderTest.class
+AtributosBasicosTest.class
+CriandoPathTest.class
+DirectoryStreamTest.class
+DosFileAttributesTest.class
+FileVisitorTest.class
+FindAllTest.class
+NormalizacaoTest.class
+PathMatcherTest.class
+PosixFileAttributesTest.class
+RelativizarTest.class
+CarroTest.java
+EstudanteTest.java
+ProfessorTest.java
+CalculadoraTest.java
+EstudanteTest.java
+ParametrosTest.java
+ProfessorTest.java
+FuncionarioTest.java
+EstudanteTest.java
+ClienteTeste.java
+CarroTest.java
+ClientTeste.java
+AssociacaoTest.java
+HerancaTeste.java
+PessoaTeste.java
+CarroTeste.java
+ClienteTeste.java
+FuncionarioTeste.java
+TesteProduto.java
+DAOTeste.java
+PolimorfismoTeste.java
+CheckedExceptionTest.java
+TryWithResourcesTest.java
+CustomExceptionTest.java
+ErrorTeste.java
+MultiplasRuntimeExceltionTeste.java
+SObrescritaComExceptionTeste.java
+AssertTest.java
+WrappersTest.java
+StringBuilderTest.java
+StringPerformanceTest.java
+StringTest.java
+DateFormatTest.java
+LocaleTest.java
+ManipulacaoDeDatasTest.java
+NumberFormatTest.java
+SimpleDateFormatTest.java
+ExpressoesRegularesTest.java
+ScannerTest.java
+TokenTest.java
+ResourceBundleTest.java
+BufferedTest.java
+ConsoleTest.java
+FileDiretorioTest.java
+FileTest.java
+FileWriterReaderTest.java
+AtributosBasicosTest.java
+CriandoPathTest.java
+DirectoryStreamTest.java
+DosFileAttributesTest.java
+FileVisitorTest.java
+NormalizacaoTest.java
+PathMatcherTest.java
+PosixFileAttributesTest.java
+RelativizarTest.java
+
+Process finished with exit code 0
+
+```
 
 
 [Voltar ao Índice](#indice)
