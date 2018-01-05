@@ -6935,7 +6935,69 @@ Process finished with exit code 0
 
 ---
 
-## <a name="parte114"></a>
+## <a name="parte114">Aula 113: IO pt 06 InputStream e OutputStream</a>
+
+https://www.youtube.com/watch?v=zvi6U0VxbjE&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=114
+
+```java
+package com.devdojo.javacore.w.io;
+
+import java.io.*;
+
+public class StreamsTest {
+    public static void main(String[] args) {
+        //gravadorTunado();
+        leitorTunado();
+    }
+
+    private static void gravador() {
+        byte[] dados = {65, 66, 67, 68, 69, 70};
+        try (FileOutputStream gravador = new FileOutputStream("pasta/stream.txt")) {
+            gravador.write(dados);
+            gravador.flush();
+            System.out.println("Dados gravados com sucesso!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void leitor() {
+        try (FileInputStream leitor = new FileInputStream("pasta/stream.txt")) {
+            int leitura;
+            while ((leitura = leitor.read()) != -1) {
+                byte b = (byte) leitura;
+                System.out.println(" " + b);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void gravadorTunado() {
+        byte[] dados = {65, 66, 67, 68, 69, 70};
+        try (BufferedOutputStream gravadorBuffer = new BufferedOutputStream(new FileOutputStream("pasta/stream.txt"), 4098)) {
+            gravadorBuffer.write(dados);
+            gravadorBuffer.flush();
+            System.out.println("Dados gravados com sucesso!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void leitorTunado() {
+        try (BufferedInputStream leitorBuffer = new BufferedInputStream(new FileInputStream("pasta/stream.txt"), 4098)) {
+            int leitura;
+            while ((leitura = leitorBuffer.read()) != -1) {
+                byte b = (byte) leitura;
+                System.out.println(" " + b);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+```
 
 
 [Voltar ao Índice](#indice)
