@@ -7247,8 +7247,79 @@ Aluno{id=1, nome='William Suane', password='null', nomeEscola='DevDojo :)', turm
 
 ---
 
-## <a name="parte117"></a>
+## <a name="parte117">Aula 116: Coleções pt 01 método equals()</a>
 
+https://www.youtube.com/watch?v=sv0dIuI1PXI&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL&index=117
+
+```java
+package com.devdojo.javacore.z.colecoes.classes;
+
+public class Celular {
+    private String nome;
+    private String IMEI;
+
+    public Celular(String nome, String IMEI) {
+        this.nome = nome;
+        this.IMEI = IMEI;
+    }
+
+    //Reflexivo = x.equals(x) tem que ser true para tudo que for diferente de null
+    //Simetrico para xe y diferentes de null, se x.equals(y) == true logo y.equals(x) tem que ser true
+    //Transitividade para x, y, z diferentes de null, se x.equals(y) == true, logo y.equals(x) == true e x.equals(z) == true logo y.equals(z) também tem que ser true
+    //Consistente x.equals(y) deve sempre retornar o mesmo valor
+    // para x diferente de null x.equals(null) tem que retornar false;
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (this.getClass() != obj.getClass()) return false;
+        Celular outroCelular = (Celular) obj;
+        return IMEI != null && IMEI.equals(outroCelular.getIMEI());
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getIMEI() {
+        return IMEI;
+    }
+
+    public void setIMEI(String IMEI) {
+        this.IMEI = IMEI;
+    }
+}
+
+```
+
+```java
+package com.devdojo.javacore.z.colecoes.teste;
+
+import com.devdojo.javacore.z.colecoes.classes.Celular;
+
+public class EqualsTeste {
+    public static void main(String[] args) {
+        String nome1 = "José";
+        String nome2 = new String("José");
+        Integer int1 = 5;
+        Integer int2 = new Integer(5);
+
+        //System.out.println(nome1.equals(nome2));
+        //System.out.println(int1.equals(int2));
+
+        Celular c1  = new Celular("iPhone", "123456");
+        Celular c2  = new Celular("iPhone", "1234562");
+        System.out.println(c1.equals(c2));
+    }
+}
+
+```
 
 [Voltar ao Índice](#indice)
 
