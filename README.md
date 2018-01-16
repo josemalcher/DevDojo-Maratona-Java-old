@@ -7392,7 +7392,15 @@ public class Celular {
 
 ---
 
-## <a name="parte119"></a>
+## <a name="parte119"> Aula 118: Coleções pt 03 Introdução as coleções</a>
+
+https://www.youtube.com/watch?v=7_ZnhlYj_tc&index=119&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+![Collection](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/collections.PNG?raw=true)
+
+http://bigocheatsheet.com/
+
+https://www.javacodegeeks.com/2011/04/simple-big-o-notation-post.html
 
 
 [Voltar ao Índice](#indice)
