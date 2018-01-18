@@ -7407,7 +7407,48 @@ https://www.javacodegeeks.com/2011/04/simple-big-o-notation-post.html
 
 ---
 
-## <a name="parte120"></a>
+## <a name="parte120">Aula 119: Coleções pt 04 Lists pt 01</a>
+
+![Aula 119: Coleções pt 04 Lists pt 01](https://github.com/josemalcher/DevDojo-Maratona-Java/blob/master/img/Aula%20119%20Cole%C3%A7%C3%B5es%20pt%2004%20Lists%20pt%2001.png?raw=true)
+
+```java
+package com.devdojo.javacore.z.colecoes.teste;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListTest {
+    public static void main(String[] args) {
+        List<String> nomes  = new ArrayList<>();
+        List<String> nomes2 = new ArrayList<>();
+
+        nomes.add("José");
+        nomes.add("Malcher");
+        nomes2.add("José 2");
+        nomes2.add("Malcher 2");
+
+        System.out.println("size: " + nomes.size());
+        System.out.println(nomes.remove("Malcher")); //boolean
+        System.out.println("size: " + nomes.size());
+
+        nomes.addAll(nomes2); //união de duas coleções
+
+        int size = nomes.size();
+        for(int i = 0 ; i < size ; i++){
+            System.out.println(nomes.get(i));
+        }
+
+        List<Integer> numeros = new ArrayList<>();
+        numeros.add(10); //wrapper
+        numeros.add(20);
+        for(Integer num : numeros){
+            System.out.println(num);
+        }
+    }
+}
+
+```
+
 
 
 [Voltar ao Índice](#indice)
