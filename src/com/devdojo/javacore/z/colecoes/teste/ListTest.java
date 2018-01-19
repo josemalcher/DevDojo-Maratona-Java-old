@@ -13,10 +13,10 @@ public class ListTest {
         nomes2.add("José 2");
         nomes2.add("Malcher 2");
 
-        System.out.println("size: " + nomes.size());
+        /*System.out.println("size: " + nomes.size());
         System.out.println(nomes.remove("Malcher")); //boolean
-        System.out.println("size: " + nomes.size());
-
+        System.out.println("size: " + nomes.size());*/
+        nomes.clear(); //Limpar a lista
         nomes.addAll(nomes2); //união de duas coleções
 
         int size = nomes.size();
