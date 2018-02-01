@@ -7499,7 +7499,176 @@ false
 
 ---
 
-## <a name="parte122"></a>
+## <a name="parte122">Curso Java Completo - Aula 121: Coleções pt 06 Ordenação de listas com Comparable</a>
+
+https://www.youtube.com/watch?v=K6RMeKMl-VQ&index=122&list=PL62G310vn6nHrMr1tFLNOYP_c73m6nAzL
+
+#### com/devdojo/javacore/z/colecoes/teste/SortListTest.java
+```java
+package com.devdojo.javacore.z.colecoes.teste;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class SortListTest {
+    public static void main(String[] args) {
+        List<String> nomes = new ArrayList<>();
+        nomes.add("José");
+        nomes.add("Malcher");
+        nomes.add("DevDojo");
+        nomes.add("Maria");
+        nomes.add("Luciana");
+        nomes.add(0, "Carolina");
+        Collections.sort(nomes);
+
+        List<Double> numeros = new ArrayList<>();
+        numeros.add(1.5);
+        numeros.add(1.3);
+        numeros.add(1.9);
+        numeros.add(2d);
+        Collections.sort(numeros);
+
+        for (String nome : nomes) {
+            System.out.println(nome);
+        }
+
+        for (Double numero : numeros) {
+            System.out.println(numero);
+        }
+
+
+    }
+}
+
+```
+
+#### com/devdojo/javacore/z/colecoes/classes/Produto.java
+```java
+package com.devdojo.javacore.z.colecoes.classes;
+
+public class Produto implements Comparable<Produto> {
+
+    private String serialNumber;
+    private String nome;
+    private Double preco;
+    private int quantidade;
+
+    public Produto(String serialNumber, String nome, double preco) {
+        this.serialNumber = serialNumber;
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    public Produto(String serialNumber, String nome, Double preco, int quantidade) {
+        this.serialNumber = serialNumber;
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Produto produto = (Produto) o;
+
+        return serialNumber != null ? serialNumber.equals(produto.serialNumber) : produto.serialNumber == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return serialNumber != null ? serialNumber.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "serialNumber='" + serialNumber + '\'' +
+                ", nome='" + nome + '\'' +
+                ", preco=" + preco +
+                ", quantidade=" + quantidade +
+                '}';
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    @Override
+    public int compareTo(Produto outroObjeto) {
+        // negativo se o thisObject < outroObjeto
+        // Zero se thisObject == outroObjeto
+        // Positivo se thisObject > outroObjeto
+        Double d = preco;
+        return d.compareTo(outroObjeto.getPreco());
+    }
+}
+
+```
+
+#### com/devdojo/javacore/z/colecoes/teste/ProdutoNomeComparator.java
+````java
+package com.devdojo.javacore.z.colecoes.teste;
+
+import com.devdojo.javacore.z.colecoes.classes.Produto;
+
+import java.util.*;
+
+class SortProdutoTest {
+    public static void main(String[] args) {
+        List<Produto> produtos = new ArrayList<>();
+
+        Produto produto1 = new Produto("123", "Laptop Lenovo", 2000.0);
+        Produto produto2 = new Produto("321", "Picanha", 26.4);
+        Produto produto3 = new Produto("879", "Teclado Razer", 1000.0);
+        Produto produto4 = new Produto("012", "Samsung galaxy S7 64Gb", 3250.5);
+        produtos.add(produto1);
+        produtos.add(produto2);
+        produtos.add(produto3);
+        produtos.add(produto4);
+        Collections.sort(produtos);
+        for (Produto produto : produtos) {
+            System.out.println(produto);
+        }
+    }
+}
+
+````
 
 
 [Voltar ao Índice](#indice)
