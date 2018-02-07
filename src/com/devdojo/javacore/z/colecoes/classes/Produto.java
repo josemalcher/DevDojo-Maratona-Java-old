@@ -88,6 +88,6 @@ public class Produto implements Comparable<Produto> {
         // Zero se thisObject == outroObjeto
         // Positivo se thisObject > outroObjeto
         Double d = preco;
-        return d.compareTo(outroObjeto.getPreco());
+        return this.preco.compareTo(outroObjeto.getPreco());
     }
 }
